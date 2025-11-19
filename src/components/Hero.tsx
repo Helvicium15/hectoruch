@@ -35,17 +35,9 @@ const Hero = () => {
         {/* Central Image with Text Overlay */}
         <div className="relative max-w-6xl mx-auto h-[600px] flex items-center justify-center">
           <div className="absolute inset-0 flex items-center justify-center">
-            <video 
-              autoPlay 
-              loop 
-              muted 
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen"
-            >
-              <source src="/hero-background.mp4" type="video/mp4" />
-            </video>
             <div className="relative w-full h-full max-w-4xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 blur-3xl" />
+              
             </div>
           </div>
 
