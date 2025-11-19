@@ -48,6 +48,10 @@ All colors MUST be HSL.
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-elegant: 0 20px 60px -15px hsl(18 100% 60% / 0.5);
     --shadow-glow: 0 0 80px hsl(18 100% 60% / 0.4);
+    
+    /* Fluid animation durations */
+    --blob-duration: 20s;
+    --blob-reverse-duration: 25s;
 
     --sidebar-background: 0 0% 98%;
 
@@ -113,5 +117,17 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
   }
 }
