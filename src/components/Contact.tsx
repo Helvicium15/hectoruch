@@ -10,19 +10,19 @@ const Contact = () => {
       <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-pulse delay-1000" />
       
       <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
-        <div className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-6">
-          <p className="font-inter text-sm text-accent font-medium">Get In Touch</p>
+        <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full mb-6">
+          <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">Let's Connect</p>
         </div>
         
-        <h2 className="font-playfair text-4xl md:text-6xl font-bold">
+        <h2 className="font-playfair text-4xl md:text-6xl font-black leading-tight">
           <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            Let's Create Together
+            READY TO CREATE SOMETHING BOLD?
           </span>
         </h2>
         
-        <p className="font-inter text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
-          I'm always interested in exciting projects and creative collaborations. 
-          Whether you need a fresh visual identity, stunning 3D art, or innovative design solutions—let's talk!
+        <p className="font-inter text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">
+          Got a project that needs that extra edge? Let's collaborate and bring your vision to life with 
+          designs that break the mold.
         </p>
         
         <div className="flex flex-wrap gap-4 justify-center pt-4">
