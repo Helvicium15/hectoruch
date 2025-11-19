@@ -1,5 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import profileImage from "@/assets/hector-profile.jpg";
+import heroVideo from "@/assets/hero-background.mp4";
 const Hero = () => {
   return <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Header */}
@@ -22,6 +23,17 @@ const Hero = () => {
         <span className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium">3D Modeling</span>
         <span className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium">Photography</span>
       </div>
+
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
 
       {/* Main Hero Content */}
       <div className="flex-1 relative px-6 pb-20">
