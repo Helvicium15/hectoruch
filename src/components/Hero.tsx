@@ -37,7 +37,7 @@ const Hero = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full max-w-4xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 blur-3xl" />
-              <img src={profileImage} alt="Hector Uribe" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" />
+              
             </div>
           </div>
 
