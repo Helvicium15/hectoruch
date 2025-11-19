@@ -1,3 +1,5 @@
+import profileImage from "@/assets/hector-profile.jpg";
+
 const About = () => {
   return (
     <section id="about" className="py-32 px-6 relative overflow-hidden">
@@ -6,36 +8,49 @@ const About = () => {
       
       <div className="max-w-5xl mx-auto relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div>
-            <div className="inline-block px-4 py-2 bg-accent/10 border border-accent/20 rounded-full mb-6">
-              <p className="font-inter text-sm text-accent font-medium">About Me</p>
+          <div className="order-2 md:order-1">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl transform rotate-3" />
+              <img 
+                src={profileImage} 
+                alt="Hector Uribe Chacon - Media Designer" 
+                className="relative rounded-2xl w-full h-auto shadow-elegant grayscale hover:grayscale-0 transition-all duration-500"
+              />
+            </div>
+          </div>
+          
+          <div className="order-1 md:order-2">
+            <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full mb-6">
+              <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">Who I Am</p>
             </div>
             
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Passionate Designer & 3D Artist
+            <h2 className="font-playfair text-4xl md:text-5xl font-black mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Creating Visual Impact
             </h2>
             
-            <div className="space-y-6 font-inter text-base md:text-lg leading-relaxed text-foreground/80">
-              <p>
-                Since childhood, I've been fascinated by artistic drawing and technology. 
-                The development and refinement of these two interests have led me to extensive 
-                experience in creating digital and printed content, as well as 3D modeling.
+            <div className="space-y-6 font-inter text-base md:text-lg leading-relaxed text-foreground/90">
+              <p className="font-semibold text-xl">
+                I don't just design—I create experiences that demand attention.
               </p>
               
               <p>
-                As a trained <strong className="text-foreground">Media Designer for Digital and Print</strong>, 
-                I combine creative vision with technical expertise. My background in 3D art and animation 
-                adds a unique dimension to my design work.
+                From childhood sketches to cutting-edge 3D worlds, I've turned my obsession with art and tech into a career 
+                that blends <strong className="text-primary">bold creativity</strong> with technical precision.
               </p>
               
               <p>
-                The desire for continuous learning drives me to constantly seek new ways to develop 
-                professionally and push the boundaries of visual design.
+                As a <strong className="text-foreground">Media Designer for Digital and Print</strong>, 
+                I push boundaries in every project—whether it's immersive 3D art, striking print designs, or digital experiences 
+                that leave a lasting impression.
+              </p>
+              
+              <p className="font-semibold">
+                Always evolving. Always innovating. Never settling.
               </p>
             </div>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6 order-3 md:col-span-2">
             <div className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
               <h3 className="font-playfair text-2xl font-semibold mb-4 text-foreground">Quick Facts</h3>
               <ul className="space-y-3 font-inter text-foreground/80">
