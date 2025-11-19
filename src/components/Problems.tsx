@@ -22,11 +22,9 @@ const Problems = () => {
           
           <h2 className="font-black text-5xl md:text-7xl mb-6">
             
-            <span className="text-primary">DON'T CHOOSE IT?</span>
+            <span className="text-primary"></span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            4 problems that 80% of clients face when their work doesn't get the attention it deserves
-          </p>
+          
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">

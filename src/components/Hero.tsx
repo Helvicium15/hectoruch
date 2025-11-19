@@ -1,9 +1,7 @@
 import { ArrowDown } from "lucide-react";
 import profileImage from "@/assets/hector-profile.jpg";
-
 const Hero = () => {
-  return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
+  return <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Header */}
       <header className="relative z-20 px-6 py-6 flex justify-between items-start">
         <div className="flex flex-col">
@@ -29,9 +27,9 @@ const Hero = () => {
       <div className="flex-1 relative px-6 pb-20">
         {/* Grid overlay */}
         <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-10">
-          {Array.from({ length: 36 }).map((_, i) => (
-            <div key={i} className="border border-foreground/20" />
-          ))}
+          {Array.from({
+          length: 36
+        }).map((_, i) => <div key={i} className="border border-foreground/20" />)}
         </div>
 
         {/* Central Image with Text Overlay */}
@@ -39,11 +37,7 @@ const Hero = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="relative w-full h-full max-w-4xl">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 blur-3xl" />
-              <img 
-                src={profileImage} 
-                alt="Hector Uribe" 
-                className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity"
-              />
+              <img src={profileImage} alt="Hector Uribe" className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity" />
             </div>
           </div>
 
@@ -69,21 +63,13 @@ const Hero = () => {
           <div className="absolute bottom-20 left-1/4 px-3 py-2 border border-foreground/30 text-xs text-foreground/60">
             [innovative]
           </div>
-          <div className="absolute bottom-32 right-10 px-3 py-2 border border-primary/50 text-xs text-primary">
-            [agency of systematic brand promotion]
-          </div>
+          
         </div>
       </div>
 
-      <a 
-        href="#problems" 
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce z-20"
-        aria-label="Scroll to next section"
-      >
+      <a href="#problems" className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce z-20" aria-label="Scroll to next section">
         <ArrowDown className="w-6 h-6 text-primary" />
       </a>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
