@@ -54,12 +54,15 @@ export default {
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(135deg, hsl(var(--hero-gradient-from)), hsl(var(--hero-gradient-to)))',
+        'accent-gradient': 'linear-gradient(135deg, hsl(var(--accent-gradient-from)), hsl(var(--accent-gradient-to)))',
+        'secondary-gradient': 'linear-gradient(135deg, hsl(var(--secondary-gradient-from)), hsl(var(--secondary-gradient-to)))',
       },
       transitionProperty: {
         'smooth': 'var(--transition-smooth)',
       },
       boxShadow: {
         'elegant': 'var(--shadow-elegant)',
+        'glow': 'var(--shadow-glow)',
       },
       borderRadius: {
         lg: "var(--radius)",
