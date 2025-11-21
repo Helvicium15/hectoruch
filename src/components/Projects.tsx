@@ -1,13 +1,14 @@
 import ProjectCard from "./ProjectCard";
+import ecothreadPreview from "@/assets/ecothread-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
   const projects = [
     {
-      title: "Visual Identity",
-      category: "Branding",
-      imageUrl: "https://images.unsplash.com/photo-1626785774625-ddcddc3445e9?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      title: "EcoThread",
+      category: "Web Application",
+      imageUrl: ecothreadPreview,
+      link: "https://preview--ecothread.lovable.app/#impact"
     },
     {
       title: "Editorial Design",
