@@ -1,8 +1,6 @@
 import profileImage from "@/assets/hector-profile.jpg";
-
 const About = () => {
-  return (
-    <section id="about" className="py-32 px-6 relative overflow-hidden">
+  return <section id="about" className="py-32 px-6 relative overflow-hidden">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
       
@@ -11,11 +9,7 @@ const About = () => {
           <div className="order-2 md:order-1">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 rounded-2xl transform rotate-3" />
-              <img 
-                src={profileImage} 
-                alt="Hector Uribe Chacon - Media Designer" 
-                className="relative rounded-2xl w-full h-auto shadow-elegant grayscale hover:grayscale-0 transition-all duration-500"
-              />
+              <img src={profileImage} alt="Hector Uribe Chacon - Media Designer" className="relative rounded-2xl w-full h-auto shadow-elegant grayscale hover:grayscale-0 transition-all duration-500" />
             </div>
           </div>
           
@@ -60,7 +54,7 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-secondary rounded-full" />
-                  <span>Mexican-German Heritage</span>
+                  <span>Mexican Heritage</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full" />
@@ -76,18 +70,14 @@ const About = () => {
             <div className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl border border-accent/10 backdrop-blur-sm">
               <h3 className="font-playfair text-2xl font-semibold mb-4 text-foreground">Focus Areas</h3>
               <div className="flex flex-wrap gap-2">
-                {["UX/UI Design", "Photography", "3D Modeling", "Print Design", "Web Development", "Motion Graphics"].map((area) => (
-                  <span key={area} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-sm font-inter text-foreground/80">
+                {["UX/UI Design", "Photography", "3D Modeling", "Print Design", "Web Development", "Motion Graphics"].map(area => <span key={area} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-sm font-inter text-foreground/80">
                     {area}
-                  </span>
-                ))}
+                  </span>)}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

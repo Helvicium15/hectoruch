@@ -25,13 +25,7 @@ const Hero = () => {
       </div>
 
       {/* Video Background */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity"
-      >
+      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity">
         <source src={heroVideo} type="video/mp4" />
       </video>
 
@@ -56,12 +50,13 @@ const Hero = () => {
           {/* Large Text Overlay */}
           <div className="relative z-10 text-center">
             <h1 className="font-black text-7xl md:text-9xl tracking-tighter mb-6">
-              <span className="text-foreground">CRE</span>
-              <span className="text-primary">AT</span>
-              <span className="text-foreground">IVE</span>
+              <span className="text-foreground">HEC</span>
+              <span className="text-primary">TOR</span>
+              <span className="text-foreground"></span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">
-              Pushing boundaries in visual design, 3D art, and immersive digital experiences
+              Making the world a little more beautiful, 
+one pixel at a time
             </p>
           </div>
 
