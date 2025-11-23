@@ -17,10 +17,10 @@ const Projects = () => {
       link: "https://www.behance.net/hectoruribe2"
     },
     {
-      title: "Typography Exploration",
-      category: "Graphic Design",
+      title: "3D Models",
+      category: "Sketchfab",
       imageUrl: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      link: "https://sketchfab.com/hectorz151"
     },
     {
       title: "Brand System",
