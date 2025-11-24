@@ -38,10 +38,10 @@ const Projects = () => {
       link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
     },
     {
-      title: "Art Direction",
+      title: "Online Shop",
       category: "Creative",
       imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      link: "https://xd.adobe.com/view/00123104-85eb-4571-ada2-cb2bf6c029e9-5541/"
     }
   ];
 
