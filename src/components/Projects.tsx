@@ -39,7 +39,7 @@ const Projects = () => {
       link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
     },
     {
-      title: "Online Shop",
+      title: "Photograph",
       category: "GrünKram",
       imageUrl: onlineshopPreview,
       link: "https://unsplash.com/de/@helvicium"
