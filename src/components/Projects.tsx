@@ -1,5 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
+import landingpagePreview from "@/assets/landingpage-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
@@ -11,9 +12,9 @@ const Projects = () => {
       link: "https://preview--ecothread.lovable.app/#impact"
     },
     {
-      title: "Editorial Design",
-      category: "Print",
-      imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
+      title: "Landingpage Webservice",
+      category: "Web Design",
+      imageUrl: landingpagePreview,
       link: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/"
     },
     {
