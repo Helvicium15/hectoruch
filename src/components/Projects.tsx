@@ -40,7 +40,7 @@ const Projects = () => {
     },
     {
       title: "Photograph",
-      category: "GrünKram",
+      category: "Unsplash",
       imageUrl: onlineshopPreview,
       link: "https://unsplash.com/de/@helvicium"
     }
