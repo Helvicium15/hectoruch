@@ -1,6 +1,7 @@
 import ProjectCard from "./ProjectCard";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
+import calendarPreview from "@/assets/calendar-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
@@ -26,7 +27,7 @@ const Projects = () => {
     {
       title: "Calendar",
       category: "Print Design",
-      imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
+      imageUrl: calendarPreview,
       link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
     },
     {
