@@ -40,7 +40,7 @@ const Projects = () => {
     },
     {
       title: "Online Shop",
-      category: "Creative",
+      category: "GrünKram",
       imageUrl: onlineshopPreview,
       link: "https://xd.adobe.com/view/00123104-85eb-4571-ada2-cb2bf6c029e9-5541/"
     }
