@@ -2,6 +2,7 @@ import ProjectCard from "./ProjectCard";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import calendarPreview from "@/assets/calendar-preview.png";
+import mobilePreview from "@/assets/mobile-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
@@ -33,7 +34,7 @@ const Projects = () => {
     {
       title: "Mobile desing",
       category: "Product",
-      imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80",
+      imageUrl: mobilePreview,
       link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
     },
     {
