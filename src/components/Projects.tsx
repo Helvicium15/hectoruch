@@ -4,6 +4,7 @@ import landingpagePreview from "@/assets/landingpage-preview.png";
 import calendarPreview from "@/assets/calendar-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
 import onlineshopPreview from "@/assets/onlineshop-preview.png";
+import unsplashPreview from "@/assets/unsplash-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
@@ -41,7 +42,7 @@ const Projects = () => {
     {
       title: "Photograph",
       category: "Unsplash",
-      imageUrl: onlineshopPreview,
+      imageUrl: unsplashPreview,
       link: "https://unsplash.com/de/@helvicium"
     }
   ];
