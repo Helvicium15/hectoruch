@@ -24,10 +24,10 @@ const Projects = () => {
       link: "https://sketchfab.com/hectorz151"
     },
     {
-      title: "Brand System",
-      category: "Identity",
+      title: "Calendar",
+      category: "Print Design",
       imageUrl: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
     },
     {
       title: "Packaging Design",
