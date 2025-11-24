@@ -3,6 +3,7 @@ import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import calendarPreview from "@/assets/calendar-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
+import onlineshopPreview from "@/assets/onlineshop-preview.png";
 
 const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
@@ -40,7 +41,7 @@ const Projects = () => {
     {
       title: "Online Shop",
       category: "Creative",
-      imageUrl: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+      imageUrl: onlineshopPreview,
       link: "https://xd.adobe.com/view/00123104-85eb-4571-ada2-cb2bf6c029e9-5541/"
     }
   ];
