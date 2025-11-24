@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       title: "EcoThread",
-      category: "Web Application",
+      category: "Ecommerce Website",
       imageUrl: ecothreadPreview,
       link: "https://preview--ecothread.lovable.app/#impact"
     },
