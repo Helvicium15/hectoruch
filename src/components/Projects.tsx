@@ -14,7 +14,7 @@ const Projects = () => {
       title: "Editorial Design",
       category: "Print",
       imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      link: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/"
     },
     {
       title: "3D Models",
