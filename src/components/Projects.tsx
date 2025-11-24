@@ -32,7 +32,7 @@ const Projects = () => {
       link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
     },
     {
-      title: "Mobile desing",
+      title: "Mobile design",
       category: "Product",
       imageUrl: mobilePreview,
       link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
