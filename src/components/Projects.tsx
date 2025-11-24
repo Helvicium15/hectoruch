@@ -31,10 +31,10 @@ const Projects = () => {
       link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
     },
     {
-      title: "Packaging Design",
+      title: "Mobile desing",
       category: "Product",
       imageUrl: "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=800&q=80",
-      link: "https://www.behance.net/hectoruribe2"
+      link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
     },
     {
       title: "Art Direction",
