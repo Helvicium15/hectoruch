@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="relative z-20 px-6 flex flex-wrap gap-3 mb-12">
         <a href="https://www.behance.net/hectoruribe2" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">Design</a>
         <a href="https://sketchfab.com/hectorz151" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">3D Modeling</a>
-        <span className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium">Photography</span>
+        <a href="https://unsplash.com/es/@helvicium" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">Photography</a>
       </div>
 
       {/* Video Background */}
