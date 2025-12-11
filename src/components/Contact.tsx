@@ -23,10 +23,10 @@ const Contact = () => {
         <div className="flex flex-wrap gap-4 justify-center pt-4">
           <a 
             href="mailto:hectoruch18@gmail.com" 
-            className="inline-flex items-center justify-center font-inter text-base px-8 py-6 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-md hover:shadow-glow transition-all duration-300 font-medium"
+            className="inline-flex items-center font-inter text-lg md:text-xl text-primary hover:text-secondary transition-colors duration-300 font-medium"
           >
             <Mail className="mr-2 h-5 w-5" />
-            Send Email
+            hectoruch18@gmail.com
           </a>
           
           <Button variant="outline" size="lg" className="font-inter text-base px-8 py-6 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
