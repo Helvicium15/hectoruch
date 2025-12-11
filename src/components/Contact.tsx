@@ -1,9 +1,7 @@
 import { Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 const Contact = () => {
-  return (
-    <section id="contact" className="py-32 px-6 relative overflow-hidden">
+  return <section id="contact" className="py-32 px-6 relative overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10" />
       <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" />
@@ -20,29 +18,17 @@ const Contact = () => {
           </span>
         </h2>
         
-        <p className="font-inter text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">
-          Got a project that needs that extra edge? Let's collaborate and bring your vision to life with 
-          designs that break the mold.
-        </p>
+        <p className="font-inter text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">Got a project that needs that extra edge? Let's collaborate!!</p>
         
         <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <Button 
-            size="lg"
-            className="font-inter text-base px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:shadow-glow transition-all duration-300"
-            asChild
-          >
+          <Button size="lg" className="font-inter text-base px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:shadow-glow transition-all duration-300" asChild>
             <a href="mailto:hectoruch18@gmail.com">
               <Mail className="mr-2 h-5 w-5" />
               Send Email
             </a>
           </Button>
           
-          <Button 
-            variant="outline"
-            size="lg"
-            className="font-inter text-base px-8 py-6 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            asChild
-          >
+          <Button variant="outline" size="lg" className="font-inter text-base px-8 py-6 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
             <a href="https://www.behance.net/hectoruribe2" target="_blank" rel="noopener noreferrer">
               View Portfolio
             </a>
@@ -50,20 +36,13 @@ const Contact = () => {
         </div>
         
         <div className="pt-12 flex flex-wrap justify-center gap-8 text-sm font-inter text-muted-foreground">
-          <a 
-            href="https://unsplash.com/de/@helvicium" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="hover:text-primary transition-colors"
-          >
+          <a href="https://unsplash.com/de/@helvicium" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
             Unsplash Photography
           </a>
           <span>•</span>
           <span>Based in Mainz, Germany</span>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
