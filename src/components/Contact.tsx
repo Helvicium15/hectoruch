@@ -21,12 +21,13 @@ const Contact = () => {
         <p className="font-inter text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed font-medium">Got a project that needs that extra edge? Let's collaborate!!</p>
         
         <div className="flex flex-wrap gap-4 justify-center pt-4">
-          <Button size="lg" className="font-inter text-base px-8 py-6 bg-gradient-to-r from-primary to-secondary hover:shadow-glow transition-all duration-300" asChild>
-            <a href="mailto:hectoruch18@gmail.com">
-              <Mail className="mr-2 h-5 w-5" />
-              Send Email
-            </a>
-          </Button>
+          <a 
+            href="mailto:hectoruch18@gmail.com" 
+            className="inline-flex items-center justify-center font-inter text-base px-8 py-6 bg-gradient-to-r from-primary to-secondary text-primary-foreground rounded-md hover:shadow-glow transition-all duration-300 font-medium"
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            Send Email
+          </a>
           
           <Button variant="outline" size="lg" className="font-inter text-base px-8 py-6 border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" asChild>
             <a href="https://www.behance.net/hectoruribe2" target="_blank" rel="noopener noreferrer">
