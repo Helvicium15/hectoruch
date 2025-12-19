@@ -1,4 +1,4 @@
-import { Palette, Pen, Code, Camera, Box, Layers } from "lucide-react";
+import { Palette, Pen, Code, Camera, Box, Layers, ExternalLink } from "lucide-react";
 import { 
   SiAdobephotoshop, 
   SiAdobeillustrator, 
@@ -16,13 +16,14 @@ interface Skill {
   proficiency: number;
   color: string;
   embedUrl?: string;
+  linkUrl?: string;
 }
 
 const Skills = () => {
   const skills: Skill[] = [
     { name: "Graphic Design", icon: Palette, proficiency: 95, color: "from-primary to-primary/70" },
     { name: "3D Modeling", icon: Box, proficiency: 90, color: "from-secondary to-secondary/70", embedUrl: "https://sketchfab.com/models/584ce27fa6034998b5a01e83864b513b/embed" },
-    { name: "Photography", icon: Camera, proficiency: 88, color: "from-accent to-accent/70" },
+    { name: "Photography", icon: Camera, proficiency: 88, color: "from-accent to-accent/70", linkUrl: "https://unsplash.com/es/fotos/la-copa-de-vino-se-encuentra-sobre-una-mesa-con-vistas-a-un-vinedo-cde6dorxX3w" },
     { name: "UX/UI Design", icon: Layers, proficiency: 85, color: "from-primary to-secondary" },
     { name: "Illustration", icon: Pen, proficiency: 87, color: "from-accent to-primary" },
     { name: "Web Development", icon: Code, proficiency: 80, color: "from-secondary to-accent" },
@@ -80,9 +81,21 @@ const Skills = () => {
                   )}
                   
                   {/* Skill Name */}
-                  <h3 className="font-inter text-xl font-semibold text-foreground">
-                    {skill.name}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="font-inter text-xl font-semibold text-foreground">
+                      {skill.name}
+                    </h3>
+                    {skill.linkUrl && (
+                      <a 
+                        href={skill.linkUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-secondary transition-colors"
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </a>
+                    )}
+                  </div>
                   
                   {/* Progress Bar with gradient */}
                   <div className="space-y-2">
