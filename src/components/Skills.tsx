@@ -26,7 +26,7 @@ const Skills = () => {
     { name: "Photography", icon: Camera, proficiency: 88, color: "from-accent to-accent/70", linkUrl: "https://unsplash.com/es/fotos/la-copa-de-vino-se-encuentra-sobre-una-mesa-con-vistas-a-un-vinedo-cde6dorxX3w" },
     { name: "UX/UI Design", icon: Layers, proficiency: 85, color: "from-primary to-secondary" },
     { name: "Illustration", icon: Pen, proficiency: 87, color: "from-accent to-primary" },
-    { name: "Web Development", icon: Code, proficiency: 80, color: "from-secondary to-accent" },
+    { name: "Web Development", icon: Code, proficiency: 80, color: "from-secondary to-accent", embedUrl: "https://xd.adobe.com/embed/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/" },
   ];
 
   return (
