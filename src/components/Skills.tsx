@@ -15,12 +15,13 @@ interface Skill {
   icon: React.ElementType;
   proficiency: number;
   color: string;
+  embedUrl?: string;
 }
 
 const Skills = () => {
   const skills: Skill[] = [
     { name: "Graphic Design", icon: Palette, proficiency: 95, color: "from-primary to-primary/70" },
-    { name: "3D Modeling", icon: Box, proficiency: 90, color: "from-secondary to-secondary/70" },
+    { name: "3D Modeling", icon: Box, proficiency: 90, color: "from-secondary to-secondary/70", embedUrl: "https://sketchfab.com/models/584ce27fa6034998b5a01e83864b513b/embed" },
     { name: "Photography", icon: Camera, proficiency: 88, color: "from-accent to-accent/70" },
     { name: "UX/UI Design", icon: Layers, proficiency: 85, color: "from-primary to-secondary" },
     { name: "Illustration", icon: Pen, proficiency: 87, color: "from-accent to-primary" },
@@ -55,12 +56,28 @@ const Skills = () => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-500`} />
                 
                 <div className="relative space-y-4">
-                  {/* Icon with gradient background */}
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${skill.color} p-0.5`}>
-                    <div className="w-full h-full bg-card rounded-xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-500">
-                      <Icon className="w-7 h-7 text-foreground group-hover:text-white transition-colors duration-500" />
+                  {/* 3D Model Embed */}
+                  {skill.embedUrl && (
+                    <div className="w-full aspect-video rounded-xl overflow-hidden mb-4 border border-border">
+                      <iframe 
+                        title={skill.name}
+                        className="w-full h-full"
+                        src={skill.embedUrl}
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; xr-spatial-tracking"
+                        allowFullScreen
+                      />
                     </div>
-                  </div>
+                  )}
+                  
+                  {/* Icon with gradient background - only show if no embed */}
+                  {!skill.embedUrl && (
+                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${skill.color} p-0.5`}>
+                      <div className="w-full h-full bg-card rounded-xl flex items-center justify-center group-hover:bg-transparent transition-colors duration-500">
+                        <Icon className="w-7 h-7 text-foreground group-hover:text-white transition-colors duration-500" />
+                      </div>
+                    </div>
+                  )}
                   
                   {/* Skill Name */}
                   <h3 className="font-inter text-xl font-semibold text-foreground">
