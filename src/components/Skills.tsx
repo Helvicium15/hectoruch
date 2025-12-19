@@ -1,4 +1,14 @@
 import { Palette, Pen, Code, Camera, Box, Layers } from "lucide-react";
+import { 
+  SiAdobephotoshop, 
+  SiAdobeillustrator, 
+  SiAdobeaftereffects, 
+  SiAdobeindesign, 
+  SiAdobexd, 
+  SiAutodesk,
+  SiHtml5,
+  SiCss3
+} from "react-icons/si";
 
 interface Skill {
   name: string;
@@ -88,27 +98,34 @@ const Skills = () => {
             <p className="font-inter text-muted-foreground">Professional software I work with daily</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-4 md:grid-cols-4 lg:grid-cols-8 gap-4">
             {[
-              "Adobe Photoshop",
-              "Adobe Illustrator",
-              "Adobe After Effects",
-              "Adobe InDesign",
-              "Adobe XD",
-              "Autodesk Maya",
-              "Autodesk 3DS Max",
-              "HTML5 & CSS3"
-            ].map((tool, index) => (
-              <div 
-                key={tool}
-                className="group p-6 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-elegant animate-in fade-in"
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                <p className="font-inter text-sm font-medium text-center text-foreground/80 group-hover:text-foreground transition-colors">
-                  {tool}
-                </p>
-              </div>
-            ))}
+              { name: "Photoshop", icon: SiAdobephotoshop, color: "#31A8FF" },
+              { name: "Illustrator", icon: SiAdobeillustrator, color: "#FF9A00" },
+              { name: "After Effects", icon: SiAdobeaftereffects, color: "#9999FF" },
+              { name: "InDesign", icon: SiAdobeindesign, color: "#FF3366" },
+              { name: "Adobe XD", icon: SiAdobexd, color: "#FF61F6" },
+              { name: "Maya", icon: SiAutodesk, color: "#0696D7" },
+              { name: "3DS Max", icon: SiAutodesk, color: "#37A5CC" },
+              { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+            ].map((tool, index) => {
+              const IconComponent = tool.icon;
+              return (
+                <div 
+                  key={tool.name}
+                  className="group flex flex-col items-center gap-3 p-6 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-elegant animate-in fade-in"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <IconComponent 
+                    className="w-10 h-10 transition-transform duration-300 group-hover:scale-110" 
+                    style={{ color: tool.color }}
+                  />
+                  <p className="font-inter text-xs font-medium text-center text-muted-foreground group-hover:text-foreground transition-colors">
+                    {tool.name}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
