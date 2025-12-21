@@ -1,4 +1,5 @@
-import { Palette, Pen, Code, Camera, Box, Layers, ExternalLink, ArrowUpRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Palette, Pen, Code, Camera, Box, Layers, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { 
   SiAdobephotoshop, 
   SiAdobeillustrator, 
@@ -20,6 +21,8 @@ interface Skill {
 }
 
 const Skills = () => {
+  const [activeIndex, setActiveIndex] = useState(2);
+  
   const skills: Skill[] = [
     { 
       name: "Graphic Design", 
@@ -64,6 +67,38 @@ const Skills = () => {
     },
   ];
 
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? skills.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev === skills.length - 1 ? 0 : prev + 1));
+  };
+
+  const getCardStyle = (index: number) => {
+    const diff = index - activeIndex;
+    const absDiff = Math.abs(diff);
+    
+    // Handle wrap-around for circular carousel
+    let adjustedDiff = diff;
+    if (diff > skills.length / 2) adjustedDiff = diff - skills.length;
+    if (diff < -skills.length / 2) adjustedDiff = diff + skills.length;
+    
+    const isActive = adjustedDiff === 0;
+    const rotation = adjustedDiff * 8; // degrees of rotation
+    const translateX = adjustedDiff * 120; // horizontal offset
+    const translateY = Math.abs(adjustedDiff) * 20; // slight vertical offset for non-active
+    const scale = isActive ? 1 : 0.85 - Math.abs(adjustedDiff) * 0.05;
+    const zIndex = 10 - Math.abs(adjustedDiff);
+    const opacity = Math.abs(adjustedDiff) > 2 ? 0 : 1 - Math.abs(adjustedDiff) * 0.15;
+    
+    return {
+      transform: `translateX(${translateX}px) translateY(${translateY}px) rotate(${rotation}deg) scale(${scale})`,
+      zIndex,
+      opacity,
+    };
+  };
+
   const formatNumber = (num: number) => {
     return `[${String(num).padStart(2, '0')}]`;
   };
@@ -75,94 +110,121 @@ const Skills = () => {
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-20">
-          <div>
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">Services</span>
-            <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider">
-              What I Do Best
-            </h2>
-          </div>
-          <p className="text-muted-foreground text-sm md:text-base max-w-md">
-            Specialized skills refined through years of practice and countless projects.
-          </p>
+        <div className="flex flex-col items-center text-center gap-6 mb-16">
+          <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Services</span>
+          <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider">
+            What I Do Best
+          </h2>
         </div>
         
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {skills.map((skill, index) => {
-            const Icon = skill.icon;
-            return (
-              <div
-                key={skill.name}
-                className="group relative overflow-hidden rounded-2xl bg-card/50 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-500"
-              >
-                {/* Card Content */}
-                <div className="p-6 md:p-8">
-                  {/* Number */}
-                  <div className="flex items-start justify-between mb-6">
-                    <span className="font-orbitron text-xs text-muted-foreground tracking-wider">
-                      {formatNumber(index + 1)}
-                    </span>
-                    {skill.linkUrl && (
-                      <a 
-                        href={skill.linkUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-                      >
-                        <ArrowUpRight className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
+        {/* Fan Carousel */}
+        <div className="relative h-[500px] md:h-[550px] flex items-center justify-center mb-16">
+          {/* Cards Container */}
+          <div className="relative w-full max-w-[300px] md:max-w-[350px] h-full flex items-center justify-center">
+            {skills.map((skill, index) => {
+              const Icon = skill.icon;
+              const style = getCardStyle(index);
+              const isActive = index === activeIndex;
+              
+              return (
+                <div
+                  key={skill.name}
+                  onClick={() => setActiveIndex(index)}
+                  className={`absolute w-[280px] md:w-[320px] cursor-pointer transition-all duration-500 ease-out
+                    ${isActive ? 'pointer-events-auto' : 'pointer-events-auto hover:opacity-90'}`}
+                  style={style}
+                >
+                  <div className={`relative overflow-hidden rounded-3xl bg-card/80 backdrop-blur-md border transition-all duration-500
+                    ${isActive ? 'border-primary/50 shadow-2xl shadow-primary/20' : 'border-border/30'}`}>
+                    
+                    {/* Card Content */}
+                    <div className="p-5 md:p-6">
+                      {/* Number */}
+                      <div className="flex items-start justify-between mb-4">
+                        <span className="font-orbitron text-xs text-muted-foreground tracking-wider">
+                          {formatNumber(index + 1)}
+                        </span>
+                        {skill.linkUrl && (
+                          <a 
+                            href={skill.linkUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                          >
+                            <ArrowUpRight className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
 
-                  {/* Embed or Icon */}
-                  {skill.embedUrl ? (
-                    <div className="w-full aspect-[4/3] rounded-xl overflow-hidden mb-6 border border-border/30 bg-muted/20">
-                      <iframe 
-                        title={skill.name}
-                        className="w-full h-full"
-                        src={skill.embedUrl}
-                        frameBorder="0"
-                        allow="autoplay; fullscreen; xr-spatial-tracking"
-                        allowFullScreen
-                      />
+                      {/* Visual Area */}
+                      <div className={`w-full aspect-square rounded-2xl mb-4 overflow-hidden bg-gradient-to-br from-muted/30 to-muted/10 border border-border/30 flex items-center justify-center transition-all duration-500
+                        ${isActive ? 'from-primary/15 to-accent/10' : ''}`}>
+                        {skill.embedUrl && isActive ? (
+                          <iframe 
+                            title={skill.name}
+                            className="w-full h-full"
+                            src={skill.embedUrl}
+                            frameBorder="0"
+                            allow="autoplay; fullscreen; xr-spatial-tracking"
+                            allowFullScreen
+                          />
+                        ) : (
+                          <Icon className={`w-16 h-16 md:w-20 md:h-20 transition-colors duration-500
+                            ${isActive ? 'text-primary/80' : 'text-muted-foreground/40'}`} />
+                        )}
+                      </div>
+                      
+                      {/* Title */}
+                      <h3 className="font-orbitron text-base md:text-lg font-semibold text-foreground uppercase tracking-wide mb-2">
+                        {skill.name}
+                      </h3>
+                      
+                      {/* Description - only visible on active */}
+                      <p className={`text-xs md:text-sm text-muted-foreground leading-relaxed transition-all duration-300
+                        ${isActive ? 'opacity-100' : 'opacity-60'}`}>
+                        {skill.description}
+                      </p>
                     </div>
-                  ) : (
-                    <div className="w-full aspect-[4/3] rounded-xl mb-6 bg-gradient-to-br from-muted/30 to-muted/10 border border-border/30 flex items-center justify-center group-hover:from-primary/10 group-hover:to-accent/10 transition-all duration-500">
-                      <Icon className="w-16 h-16 text-muted-foreground/50 group-hover:text-primary/70 transition-colors duration-500" />
-                    </div>
-                  )}
-                  
-                  {/* Title */}
-                  <h3 className="font-orbitron text-lg md:text-xl font-semibold text-foreground uppercase tracking-wide mb-3">
-                    {skill.name}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {skill.description}
-                  </p>
 
-                  {/* Bottom Actions */}
-                  <div className="flex items-center gap-3 mt-6 pt-6 border-t border-border/30">
-                    <button className="px-5 py-2.5 rounded-full bg-foreground/5 border border-border/50 text-xs font-medium text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 uppercase tracking-wider">
-                      View
-                    </button>
-                    <button className="px-5 py-2.5 rounded-full border border-border/50 text-xs font-medium text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-all duration-300 uppercase tracking-wider">
-                      Learn More
-                    </button>
+                    {/* Hover Gradient Overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 transition-opacity duration-500 pointer-events-none
+                      ${isActive ? 'opacity-5' : ''}`} />
                   </div>
                 </div>
+              );
+            })}
+          </div>
+          
+          {/* Navigation Arrows */}
+          <button 
+            onClick={handlePrev}
+            className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={handleNext}
+            className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
 
-                {/* Hover Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${skill.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`} />
-              </div>
-            );
-          })}
+        {/* Dots Indicator */}
+        <div className="flex items-center justify-center gap-2 mb-20">
+          {skills.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setActiveIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-300
+                ${index === activeIndex ? 'bg-primary w-6' : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'}`}
+            />
+          ))}
         </div>
         
         {/* Tools Section */}
-        <div className="mt-32">
+        <div className="mt-16">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">Tools</span>
