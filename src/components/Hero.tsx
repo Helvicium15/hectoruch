@@ -65,8 +65,8 @@ const Hero = () => {
           </div>
           
           {/* Main Title */}
-          <h1 className="font-inter font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[-0.02em] leading-[0.85]">
-            <span className="block text-foreground">H E C T O R</span>
+          <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9]">
+            <span className="block text-foreground">HECTOR</span>
           </h1>
           
           {/* Right side label */}

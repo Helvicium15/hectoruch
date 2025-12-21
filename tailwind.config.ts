@@ -54,9 +54,8 @@ export default {
         },
       },
       fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
+        'orbitron': ['Orbitron', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
-        'space': ['Space Grotesk', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(ellipse at center, var(--tw-gradient-stops))',
