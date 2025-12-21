@@ -50,7 +50,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="font-playfair text-4xl md:text-5xl font-semibold mb-16 text-foreground">
+        <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-16 text-foreground uppercase tracking-wider">
           Selected Works
         </h2>
         

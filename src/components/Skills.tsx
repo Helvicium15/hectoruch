@@ -39,7 +39,7 @@ const Skills = () => {
           <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
             <p className="font-inter text-sm text-primary font-medium">Skills & Expertise</p>
           </div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+          <h2 className="font-orbitron text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent uppercase tracking-wider">
             What I Do Best
           </h2>
         </div>
@@ -122,7 +122,7 @@ const Skills = () => {
         {/* Tools Section with modern cards */}
         <div className="mt-24">
           <div className="text-center mb-12">
-            <h3 className="font-playfair text-3xl font-bold mb-4 text-foreground">
+            <h3 className="font-orbitron text-2xl font-bold mb-4 text-foreground uppercase tracking-wide">
               Tools & Technologies
             </h3>
             <p className="font-inter text-muted-foreground">Professional software I work with daily</p>
