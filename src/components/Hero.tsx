@@ -1,82 +1,155 @@
-import { ArrowDown } from "lucide-react";
-import profileImage from "@/assets/hector-profile.jpg";
-import heroVideo from "@/assets/hero-background.mp4";
+import { ArrowDown, ArrowUpRight, Instagram, Send } from "lucide-react";
+import { FaXTwitter } from "react-icons/fa6";
+
 const Hero = () => {
-  return <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
+  return (
+    <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Header */}
-      <header className="relative z-20 px-6 py-6 flex justify-between items-start">
+      <header className="relative z-20 px-6 md:px-12 py-6 flex justify-between items-center">
         <div className="flex flex-col">
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">HECTOR URIBE</h2>
-          <p className="text-sm text-muted-foreground mt-1">Visual Designer • 3D Artist</p>
+          <h2 className="text-lg md:text-xl font-medium tracking-wide text-foreground">HECTOR URIBE</h2>
         </div>
-        <div className="text-right">
-          <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">For Inquiries</p>
-          <a href="mailto:hectoruch18@gmail.com" className="text-sm text-foreground hover:text-primary transition-colors">
-            hectoruch18@gmail.com
-          </a>
-        </div>
+        
+        {/* Navigation */}
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
+          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Skills</a>
+          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Projects</a>
+          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+        </nav>
+        
+        <a 
+          href="#contact" 
+          className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300"
+        >
+          Start A Project
+        </a>
       </header>
 
-      {/* Service Tags */}
-      <div className="relative z-20 px-6 flex flex-wrap gap-3 mb-12">
-        <a href="https://www.behance.net/hectoruribe2" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">Design</a>
-        <a href="https://sketchfab.com/hectorz151" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">3D Modeling</a>
-        <a href="https://unsplash.com/es/@helvicium" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-foreground text-background rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">Photography</a>
-      </div>
-
-      {/* Video Background */}
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity">
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-
       {/* Main Hero Content */}
-      <div className="flex-1 relative px-6 pb-20">
-        {/* Grid overlay */}
-        <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 opacity-10">
-          {Array.from({
-          length: 36
-        }).map((_, i) => <div key={i} className="border border-foreground/20" />)}
+      <div className="flex-1 relative px-6 md:px-12 flex items-center">
+        {/* Glass Spheres */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          {/* Main large sphere */}
+          <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
+            {/* Outer glow */}
+            <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent blur-3xl animate-pulse-glow" />
+            
+            {/* Glass sphere 1 */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/20 animate-float shadow-2xl">
+              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/5 to-transparent" />
+              <div className="absolute top-8 left-8 w-16 h-16 rounded-full bg-white/10 blur-xl" />
+            </div>
+            
+            {/* Glass sphere 2 */}
+            <div className="absolute top-10 right-10 w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/15 animate-float animation-delay-2000 shadow-xl">
+              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/5 to-transparent" />
+            </div>
+            
+            {/* Glass sphere 3 */}
+            <div className="absolute bottom-10 left-5 w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-white/8 to-transparent backdrop-blur-sm border border-white/10 animate-float animation-delay-4000 shadow-lg">
+              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/3 to-transparent" />
+            </div>
+            
+            {/* Neon light line */}
+            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-accent opacity-60 animate-neon-line" />
+            <div className="absolute top-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-40 animate-neon-line animation-delay-2000" />
+          </div>
         </div>
 
-        {/* Central Image with Text Overlay */}
-        <div className="relative max-w-6xl mx-auto h-[600px] flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="relative w-full h-full max-w-4xl">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 blur-3xl" />
-              
-            </div>
-          </div>
-
-          {/* Large Text Overlay */}
-          <div className="relative z-10 text-center">
-            <h1 className="font-black text-7xl md:text-9xl tracking-tighter mb-6">
-              <span className="text-foreground">HEC</span>
-              <span className="text-primary">TOR</span>
-              <span className="text-foreground"></span>
-            </h1>
-            <p className="text-xl md:text-2xl text-foreground/80 font-light max-w-2xl mx-auto leading-relaxed">
-              Making the world a little more beautiful, 
-one pixel at a time
-            </p>
-          </div>
-
-          {/* Decorative Labels */}
-          <div className="absolute top-10 left-10 px-3 py-2 border border-foreground/30 text-xs text-foreground/60">
-            [creative]
-          </div>
-          <div className="absolute top-1/4 right-20 px-3 py-2 border border-foreground/30 text-xs text-foreground/60">
-            [bold]
-          </div>
-          <div className="absolute bottom-20 left-1/4 px-3 py-2 border border-foreground/30 text-xs text-foreground/60">
-            [innovative]
+        {/* Text Content */}
+        <div className="relative z-10 max-w-7xl mx-auto w-full">
+          {/* Top label */}
+          <div className="mb-8">
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Visual Designer</span>
           </div>
           
+          {/* Main Title */}
+          <h1 className="font-inter font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-[-0.02em] leading-[0.85]">
+            <span className="block text-foreground">H E C T O R</span>
+          </h1>
+          
+          {/* Right side label */}
+          <div className="flex justify-end mt-4 mb-8">
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">3D Artist</span>
+          </div>
+          
+          {/* Description and CTA */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
+            <p className="text-sm md:text-base text-muted-foreground max-w-xs leading-relaxed">
+              Making the world a little more beautiful, one pixel at a time. Specializing in visual design and 3D artistry.
+            </p>
+            
+            <div className="flex items-center gap-4">
+              <a 
+                href="#projects" 
+                className="group flex items-center gap-3 px-6 py-3 rounded-full border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                <span className="text-sm font-medium">View Work</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
+              <a 
+                href="#contact" 
+                className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
+              >
+                <ArrowUpRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
-      <a href="#problems" className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce z-20" aria-label="Scroll to next section">
-        <ArrowDown className="w-6 h-6 text-primary" />
-      </a>
-    </section>;
+      {/* Bottom Section */}
+      <div className="relative z-20 px-6 md:px-12 py-8 flex justify-between items-end">
+        {/* Scroll Indicator */}
+        <div className="relative w-20 h-20">
+          <svg className="w-full h-full animate-rotate-slow" viewBox="0 0 100 100">
+            <path
+              id="textPath"
+              d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+              fill="none"
+            />
+            <text className="text-[10px] fill-muted-foreground uppercase tracking-[0.2em]">
+              <textPath href="#textPath">
+                • SCROLL • EXPLORE • SCROLL • EXPLORE
+              </textPath>
+            </text>
+          </svg>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <ArrowDown className="w-4 h-4 text-foreground animate-bounce" />
+          </div>
+        </div>
+        
+        {/* Social Links */}
+        <div className="flex items-center gap-4">
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            <Instagram className="w-4 h-4" />
+          </a>
+          <a 
+            href="https://x.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            <FaXTwitter className="w-4 h-4" />
+          </a>
+          <a 
+            href="https://t.me" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            <Send className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default Hero;
