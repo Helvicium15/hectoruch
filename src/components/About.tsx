@@ -58,11 +58,11 @@ const About = () => {
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span>Junior Graphic Designer at Vicampo</span>
+                  <span>Junior Graphic Designer </span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span>Trilingual: Spanish, German, English</span>
+                  <span>Trilingual: Spanish, German, English and sometimes Italian</span>
                 </li>
               </ul>
             </div>
