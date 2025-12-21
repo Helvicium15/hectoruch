@@ -12,9 +12,9 @@ const Contact = () => {
           <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">Let's Connect</p>
         </div>
         
-        <h2 className="font-playfair text-4xl md:text-6xl font-black leading-tight">
+        <h2 className="font-orbitron text-3xl md:text-5xl font-bold leading-tight uppercase tracking-wider">
           <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-            READY TO CREATE SOMETHING BOLD?
+            Ready to Create Something Bold?
           </span>
         </h2>
         

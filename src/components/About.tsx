@@ -18,7 +18,7 @@ const About = () => {
               <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">Who I Am</p>
             </div>
             
-            <h2 className="font-playfair text-4xl md:text-5xl font-black mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent uppercase tracking-wider">
               Creating Visual Impact
             </h2>
             
@@ -46,7 +46,7 @@ const About = () => {
           
           <div className="space-y-6 order-3 md:col-span-2">
             <div className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-foreground">Quick Facts</h3>
+              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">Quick Facts</h3>
               <ul className="space-y-3 font-inter text-foreground/80">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full" />
@@ -68,7 +68,7 @@ const About = () => {
             </div>
             
             <div className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl border border-accent/10 backdrop-blur-sm">
-              <h3 className="font-playfair text-2xl font-semibold mb-4 text-foreground">Focus Areas</h3>
+              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">Focus Areas</h3>
               <div className="flex flex-wrap gap-2">
                 {["UX/UI Design", "Photography", "3D Modeling", "Print Design", "Web Development", "Motion Graphics"].map(area => <span key={area} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-sm font-inter text-foreground/80">
                     {area}
