@@ -10,6 +10,7 @@ import {
   SiHtml5,
   SiCss3
 } from "react-icons/si";
+import photographyPreview from "@/assets/photography-preview.png";
 
 interface Skill {
   name: string;
@@ -18,6 +19,7 @@ interface Skill {
   color: string;
   embedUrl?: string;
   linkUrl?: string;
+  previewImage?: string;
 }
 
 const Skills = () => {
@@ -43,7 +45,8 @@ const Skills = () => {
       icon: Camera, 
       description: "Capturing moments and stories through a unique artistic lens.",
       color: "from-accent to-accent/70", 
-      linkUrl: "https://unsplash.com/es/fotos/la-copa-de-vino-se-encuentra-sobre-una-mesa-con-vistas-a-un-vinedo-cde6dorxX3w" 
+      linkUrl: "https://unsplash.com/es/@helvicium",
+      previewImage: photographyPreview
     },
     { 
       name: "UX/UI Design", 
@@ -184,6 +187,12 @@ const Skills = () => {
                             frameBorder="0"
                             allow="autoplay; fullscreen; xr-spatial-tracking"
                             allowFullScreen
+                          />
+                        ) : skill.previewImage ? (
+                          <img 
+                            src={skill.previewImage} 
+                            alt={skill.name}
+                            className="w-full h-full object-cover"
                           />
                         ) : (
                           <Icon className={`w-16 h-16 md:w-20 md:h-20 transition-colors duration-500
