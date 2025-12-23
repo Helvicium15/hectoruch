@@ -8,8 +8,12 @@ import {
   SiAdobexd, 
   SiAutodesk,
   SiHtml5,
-  SiCss3
+  SiCss3,
+  SiFigma,
+  SiCanva,
+  SiWebflow
 } from "react-icons/si";
+import { RiOpenaiFill } from "react-icons/ri";
 import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
 import graphicDesignPreview from "@/assets/graphic-design-preview.png";
@@ -286,6 +290,11 @@ const Skills = () => {
               { name: "Maya", icon: SiAutodesk, color: "#0696D7" },
               { name: "3DS Max", icon: SiAutodesk, color: "#37A5CC" },
               { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
+              { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+              { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+              { name: "Canva", icon: SiCanva, color: "#00C4CC" },
+              { name: "Webflow", icon: SiWebflow, color: "#4353FF" },
+              { name: "Midjourney", icon: RiOpenaiFill, color: "#FFFFFF" },
             ].map((tool, index) => {
               const IconComponent = tool.icon;
               return (
