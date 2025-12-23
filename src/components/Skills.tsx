@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Palette, Pen, Code, Camera, Box, Layers, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { 
   SiAdobephotoshop, 
@@ -27,11 +28,13 @@ interface Skill {
   embedUrl?: string;
   linkUrl?: string;
   previewImage?: string;
+  internalRoute?: string;
 }
 
 const Skills = () => {
   const [activeIndex, setActiveIndex] = useState(2);
   const [isPaused, setIsPaused] = useState(false);
+  const navigate = useNavigate();
   
   const skills: Skill[] = [
     { 
@@ -63,7 +66,7 @@ const Skills = () => {
       description: "Designing intuitive interfaces that blend form and function seamlessly.",
       color: "from-primary to-secondary", 
       embedUrl: "https://xd.adobe.com/embed/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/", 
-      linkUrl: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/" 
+      internalRoute: "/ux-ui-design"
     },
     { 
       name: "Illustration", 
@@ -161,8 +164,12 @@ const Skills = () => {
                 <div
                   key={skill.name}
                   onClick={() => {
-                    if (index === activeIndex && skill.linkUrl) {
-                      window.open(skill.linkUrl, '_blank', 'noopener,noreferrer');
+                    if (index === activeIndex) {
+                      if (skill.internalRoute) {
+                        navigate(skill.internalRoute);
+                      } else if (skill.linkUrl) {
+                        window.open(skill.linkUrl, '_blank', 'noopener,noreferrer');
+                      }
                     } else {
                       setActiveIndex(index);
                     }
@@ -181,16 +188,28 @@ const Skills = () => {
                         <span className="font-orbitron text-xs text-muted-foreground tracking-wider">
                           {formatNumber(index + 1)}
                         </span>
-                        {skill.linkUrl && (
-                          <a 
-                            href={skill.linkUrl} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-                          >
-                            <ArrowUpRight className="w-3 h-3" />
-                          </a>
+                      {(skill.linkUrl || skill.internalRoute) && (
+                          skill.internalRoute ? (
+                            <button 
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(skill.internalRoute!);
+                              }}
+                              className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                            >
+                              <ArrowUpRight className="w-3 h-3" />
+                            </button>
+                          ) : (
+                            <a 
+                              href={skill.linkUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="w-8 h-8 rounded-full border border-border/50 flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                            >
+                              <ArrowUpRight className="w-3 h-3" />
+                            </a>
+                          )
                         )}
                       </div>
 
