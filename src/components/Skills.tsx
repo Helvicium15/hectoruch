@@ -12,6 +12,7 @@ import {
 } from "react-icons/si";
 import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
+import graphicDesignPreview from "@/assets/graphic-design-preview.png";
 
 interface Skill {
   name: string;
@@ -33,7 +34,8 @@ const Skills = () => {
       icon: Palette, 
       description: "Creating visual identities and brand experiences that captivate and communicate.",
       color: "from-primary to-primary/70",
-      linkUrl: "https://www.behance.net/hectoruribe2"
+      linkUrl: "https://www.behance.net/hectoruribe2",
+      previewImage: graphicDesignPreview
     },
     { 
       name: "3D Modeling", 
