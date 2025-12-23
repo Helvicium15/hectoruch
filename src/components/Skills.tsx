@@ -151,7 +151,13 @@ const Skills = () => {
               return (
                 <div
                   key={skill.name}
-                  onClick={() => setActiveIndex(index)}
+                  onClick={() => {
+                    if (index === activeIndex && skill.linkUrl) {
+                      window.open(skill.linkUrl, '_blank', 'noopener,noreferrer');
+                    } else {
+                      setActiveIndex(index);
+                    }
+                  }}
                   className={`absolute w-[280px] md:w-[320px] cursor-pointer transition-all duration-500 ease-out
                     ${isActive ? 'pointer-events-auto' : 'pointer-events-auto hover:opacity-90'}`}
                   style={style}
