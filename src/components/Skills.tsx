@@ -22,6 +22,7 @@ interface Skill {
 
 const Skills = () => {
   const [activeIndex, setActiveIndex] = useState(2);
+  const [isPaused, setIsPaused] = useState(false);
   
   const skills: Skill[] = [
     { 
@@ -66,6 +67,17 @@ const Skills = () => {
       linkUrl: "https://baby-maps.lovable.app" 
     },
   ];
+
+  // Autoplay effect
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev === skills.length - 1 ? 0 : prev + 1));
+    }, 4000);
+    
+    return () => clearInterval(interval);
+  }, [isPaused, skills.length]);
 
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? skills.length - 1 : prev - 1));
@@ -118,7 +130,11 @@ const Skills = () => {
         </div>
         
         {/* Fan Carousel */}
-        <div className="relative h-[500px] md:h-[550px] flex items-center justify-center mb-16">
+        <div 
+          className="relative h-[500px] md:h-[550px] flex items-center justify-center mb-16"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Cards Container */}
           <div className="relative w-full max-w-[300px] md:max-w-[350px] h-full flex items-center justify-center">
             {skills.map((skill, index) => {
