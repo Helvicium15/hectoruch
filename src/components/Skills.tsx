@@ -13,6 +13,7 @@ import {
 import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
 import graphicDesignPreview from "@/assets/graphic-design-preview.png";
+import webdevPreview from "@/assets/webdev-preview.png";
 
 interface Skill {
   name: string;
@@ -73,7 +74,8 @@ const Skills = () => {
       icon: Code, 
       description: "Building responsive, modern websites with clean and efficient code.",
       color: "from-secondary to-accent", 
-      linkUrl: "https://baby-maps.lovable.app" 
+      linkUrl: "https://baby-maps.lovable.app",
+      previewImage: webdevPreview
     },
   ];
 
