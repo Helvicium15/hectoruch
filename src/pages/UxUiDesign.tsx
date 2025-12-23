@@ -1,0 +1,149 @@
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Card } from "@/components/ui/card";
+import calendarPreview from "@/assets/calendar-preview.png";
+import ecothreadPreview from "@/assets/ecothread-preview.png";
+import landingpagePreview from "@/assets/landingpage-preview.png";
+import onlineshopPreview from "@/assets/onlineshop-preview.png";
+import mobilePreview from "@/assets/mobile-preview.png";
+import unsplashPreview from "@/assets/unsplash-preview.png";
+
+interface UxProject {
+  title: string;
+  category: string;
+  imageUrl: string;
+  link: string;
+}
+
+const projects: UxProject[] = [
+  {
+    title: "Event Calendar App",
+    category: "Mobile App Design",
+    imageUrl: calendarPreview,
+    link: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/"
+  },
+  {
+    title: "Ecothread Fashion",
+    category: "E-commerce Design",
+    imageUrl: ecothreadPreview,
+    link: "https://www.behance.net/hectoruribe2"
+  },
+  {
+    title: "Corporate Landing Page",
+    category: "Web Design",
+    imageUrl: landingpagePreview,
+    link: "https://www.behance.net/hectoruribe2"
+  },
+  {
+    title: "Online Shop Dashboard",
+    category: "Dashboard Design",
+    imageUrl: onlineshopPreview,
+    link: "https://www.behance.net/hectoruribe2"
+  },
+  {
+    title: "Mobile App Concept",
+    category: "Mobile UI/UX",
+    imageUrl: mobilePreview,
+    link: "https://www.behance.net/hectoruribe2"
+  },
+  {
+    title: "Photo Gallery App",
+    category: "App Redesign",
+    imageUrl: unsplashPreview,
+    link: "https://www.behance.net/hectoruribe2"
+  }
+];
+
+const UxUiDesign = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/30">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="font-inter text-sm uppercase tracking-wider">Back</span>
+          </Link>
+          <h1 className="font-orbitron text-lg md:text-xl font-bold text-foreground uppercase tracking-wider">
+            UX/UI Design
+          </h1>
+          <div className="w-20" /> {/* Spacer for centering */}
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="pt-32 pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">Portfolio</span>
+            <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider mb-6">
+              UX/UI Projects
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A collection of user experience and interface design projects, showcasing intuitive interfaces that blend form and function seamlessly.
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {projects.map((project, index) => (
+              <a 
+                key={index}
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <Card className="overflow-hidden border border-border hover:border-primary/30 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-card/80 backdrop-blur-sm">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-secondary/90 to-accent/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                      <div className="text-center space-y-3 px-6">
+                        <h3 className="font-orbitron text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
+                          {project.title}
+                        </h3>
+                        <p className="font-inter text-sm text-white/90 uppercase tracking-wider">
+                          {project.category}
+                        </p>
+                        <div className="pt-2">
+                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                            View Project <ArrowUpRight className="w-4 h-4" />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-5">
+                    <span className="text-xs text-muted-foreground uppercase tracking-wider">{project.category}</span>
+                    <h3 className="font-orbitron text-base font-semibold text-foreground uppercase tracking-wide mt-1">
+                      {project.title}
+                    </h3>
+                  </div>
+                </Card>
+              </a>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-border/30">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} Hector Uribe. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default UxUiDesign;
