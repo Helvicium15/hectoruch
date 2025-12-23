@@ -32,7 +32,8 @@ const Skills = () => {
       name: "Graphic Design", 
       icon: Palette, 
       description: "Creating visual identities and brand experiences that captivate and communicate.",
-      color: "from-primary to-primary/70" 
+      color: "from-primary to-primary/70",
+      linkUrl: "https://www.behance.net/hectoruribe2"
     },
     { 
       name: "3D Modeling", 
