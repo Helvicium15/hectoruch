@@ -11,6 +11,7 @@ import {
   SiCss3
 } from "react-icons/si";
 import photographyPreview from "@/assets/photography-preview.png";
+import illustrationPreview from "@/assets/illustration-preview.webp";
 
 interface Skill {
   name: string;
@@ -60,7 +61,9 @@ const Skills = () => {
       name: "Illustration", 
       icon: Pen, 
       description: "Hand-crafted illustrations that bring ideas and concepts to life.",
-      color: "from-accent to-primary" 
+      color: "from-accent to-primary",
+      linkUrl: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024",
+      previewImage: illustrationPreview
     },
     { 
       name: "Web Development", 
