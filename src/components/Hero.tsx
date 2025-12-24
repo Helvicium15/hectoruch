@@ -1,7 +1,11 @@
 import { ArrowDown, ArrowUpRight, Instagram, Send } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Header */}
@@ -12,18 +16,21 @@ const Hero = () => {
         
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</a>
-          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Skills</a>
-          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Projects</a>
-          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</a>
+          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.about}</a>
+          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.skills}</a>
+          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.projects}</a>
+          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.contact}</a>
         </nav>
         
-        <a 
-          href="#contact" 
-          className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300"
-        >
-          Start A Project
-        </a>
+        <div className="flex items-center gap-4">
+          <LanguageToggle />
+          <a 
+            href="#contact" 
+            className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            {t.startProject}
+          </a>
+        </div>
       </header>
 
       {/* Main Hero Content */}
@@ -61,7 +68,7 @@ const Hero = () => {
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Top label */}
           <div className="mb-8">
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Visual Designer</span>
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
           </div>
           
           {/* Main Title */}
@@ -71,13 +78,13 @@ const Hero = () => {
           
           {/* Right side label */}
           <div className="flex justify-end mt-4 mb-8">
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">3D Artist</span>
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.artist3d}</span>
           </div>
           
           {/* Description and CTA */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
             <p className="text-sm md:text-base text-muted-foreground max-w-xs leading-relaxed">
-              Making the world a little more beautiful, one pixel at a time. Specializing in visual design and 3D artistry.
+              {t.heroDescription}
             </p>
             
             <div className="flex items-center gap-4">
@@ -85,7 +92,7 @@ const Hero = () => {
                 href="#projects" 
                 className="group flex items-center gap-3 px-6 py-3 rounded-full border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
               >
-                <span className="text-sm font-medium">View Work</span>
+                <span className="text-sm font-medium">{t.viewWork}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a 
@@ -111,7 +118,7 @@ const Hero = () => {
             />
             <text className="text-[10px] fill-muted-foreground uppercase tracking-[0.2em]">
               <textPath href="#textPath">
-                • SCROLL • EXPLORE • SCROLL • EXPLORE
+                {t.scrollExplore}
               </textPath>
             </text>
           </svg>

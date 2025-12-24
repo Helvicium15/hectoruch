@@ -1,6 +1,13 @@
 import profileImage from "@/assets/hector-profile.jpg";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const About = () => {
-  return <section id="about" className="py-32 px-6 relative overflow-hidden">
+  const { t } = useLanguage();
+
+  const focusAreas = ["UX/UI Design", "Photography", "3D Modeling", "Print Design", "Web Development", "Motion Graphics"];
+
+  return (
+    <section id="about" className="py-32 px-6 relative overflow-hidden">
       {/* Geometric accent */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl" />
       
@@ -15,69 +22,72 @@ const About = () => {
           
           <div className="order-1 md:order-2">
             <div className="inline-block px-4 py-2 bg-primary/20 border border-primary/30 rounded-full mb-6">
-              <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">Who I Am</p>
+              <p className="font-inter text-sm text-primary font-bold uppercase tracking-wider">{t.whoIAm}</p>
             </div>
             
             <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent uppercase tracking-wider">
-              Creating Visual Impact
+              {t.creatingVisualImpact}
             </h2>
             
             <div className="space-y-6 font-inter text-base md:text-lg leading-relaxed text-foreground/90">
               <p className="font-semibold text-xl">
-                I don't just design—I create experiences that demand attention.
+                {t.aboutIntro}
               </p>
               
               <p>
-                From childhood sketches to cutting-edge 3D worlds, I've turned my obsession with art and tech into a career 
-                that blends <strong className="text-primary">bold creativity</strong> with technical precision.
+                {t.aboutText1} <strong className="text-primary">{t.boldCreativity}</strong> {t.aboutText2}
               </p>
               
               <p>
-                As a <strong className="text-foreground">Media Designer for Digital and Print</strong>, 
+                As a <strong className="text-foreground">{t.mediaDesigner}</strong>, 
                 I push boundaries in every project—whether it's immersive 3D art, striking print designs, or digital experiences 
                 that leave a lasting impression.
               </p>
               
               <p className="font-semibold">
-                Always evolving. Always innovating. Never settling.
+                {t.aboutOutro}
               </p>
             </div>
           </div>
           
           <div className="space-y-6 order-3 md:col-span-2">
             <div className="p-8 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/10 backdrop-blur-sm">
-              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">Quick Facts</h3>
+              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">{t.quickFacts}</h3>
               <ul className="space-y-3 font-inter text-foreground/80">
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span>Based in Mainz, Germany</span>
+                  <span>{t.basedIn}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-secondary rounded-full" />
-                  <span>Mexican Heritage</span>
+                  <span>{t.heritage}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-accent rounded-full" />
-                  <span>Junior Graphic Designer </span>
+                  <span>{t.role}</span>
                 </li>
                 <li className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-primary rounded-full" />
-                  <span>Trilingual: Spanish, German, English and sometimes Italian</span>
+                  <span>{t.languages}</span>
                 </li>
               </ul>
             </div>
             
             <div className="p-8 bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl border border-accent/10 backdrop-blur-sm">
-              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">Focus Areas</h3>
+              <h3 className="font-orbitron text-xl font-semibold mb-4 text-foreground uppercase tracking-wide">{t.focusAreas}</h3>
               <div className="flex flex-wrap gap-2">
-                {["UX/UI Design", "Photography", "3D Modeling", "Print Design", "Web Development", "Motion Graphics"].map(area => <span key={area} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-sm font-inter text-foreground/80">
+                {focusAreas.map(area => (
+                  <span key={area} className="px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 rounded-full text-sm font-inter text-foreground/80">
                     {area}
-                  </span>)}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default About;
