@@ -1,4 +1,5 @@
 import ProjectCard from "./ProjectCard";
+import { useLanguage } from "@/contexts/LanguageContext";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import calendarPreview from "@/assets/calendar-preview.png";
@@ -7,6 +8,8 @@ import onlineshopPreview from "@/assets/onlineshop-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
 
 const Projects = () => {
+  const { t } = useLanguage();
+
   // Placeholder projects - replace with actual projects from Behance
   const projects = [
     {
@@ -51,7 +54,7 @@ const Projects = () => {
     <section id="projects" className="py-32 px-6">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-16 text-foreground uppercase tracking-wider">
-          Selected Works
+          {t.selectedWorks}
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">

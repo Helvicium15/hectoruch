@@ -15,6 +15,7 @@ import {
   SiWebflow
 } from "react-icons/si";
 import { RiOpenaiFill } from "react-icons/ri";
+import { useLanguage } from "@/contexts/LanguageContext";
 import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
 import graphicDesignPreview from "@/assets/graphic-design-preview.png";
@@ -35,51 +36,52 @@ const Skills = () => {
   const [activeIndex, setActiveIndex] = useState(2);
   const [isPaused, setIsPaused] = useState(false);
   const navigate = useNavigate();
+  const { t } = useLanguage();
   
   const skills: Skill[] = [
     { 
-      name: "Graphic Design", 
+      name: t.graphicDesign, 
       icon: Palette, 
-      description: "Creating visual identities and brand experiences that captivate and communicate.",
+      description: t.graphicDesignDesc,
       color: "from-primary to-primary/70",
       linkUrl: "https://www.behance.net/hectoruribe2",
       previewImage: graphicDesignPreview
     },
     { 
-      name: "3D Modeling", 
+      name: t.modeling3d, 
       icon: Box, 
-      description: "Building immersive 3D worlds and objects with attention to detail and realism.",
+      description: t.modeling3dDesc,
       color: "from-secondary to-secondary/70", 
       embedUrl: "https://sketchfab.com/models/584ce27fa6034998b5a01e83864b513b/embed" 
     },
     { 
-      name: "Photography", 
+      name: t.photography, 
       icon: Camera, 
-      description: "Capturing moments and stories through a unique artistic lens.",
+      description: t.photographyDesc,
       color: "from-accent to-accent/70", 
       linkUrl: "https://unsplash.com/es/@helvicium",
       previewImage: photographyPreview
     },
     { 
-      name: "UX/UI Design", 
+      name: t.uxUiDesign, 
       icon: Layers, 
-      description: "Designing intuitive interfaces that blend form and function seamlessly.",
+      description: t.uxUiDesignDesc,
       color: "from-primary to-secondary", 
       embedUrl: "https://xd.adobe.com/embed/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/", 
       internalRoute: "/ux-ui-design"
     },
     { 
-      name: "Illustration", 
+      name: t.illustration, 
       icon: Pen, 
-      description: "Hand-crafted illustrations that bring ideas and concepts to life.",
+      description: t.illustrationDesc,
       color: "from-accent to-primary",
       linkUrl: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024",
       previewImage: illustrationPreview
     },
     { 
-      name: "Web Development", 
+      name: t.webDevelopment, 
       icon: Code, 
-      description: "Building responsive, modern websites with clean and efficient code.",
+      description: t.webDevelopmentDesc,
       color: "from-secondary to-accent", 
       linkUrl: "https://baby-maps.lovable.app",
       previewImage: webdevPreview
@@ -141,9 +143,9 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-6 mb-16">
-          <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">Services</span>
+          <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.services}</span>
           <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider">
-            What I Do Best
+            {t.whatIBest}
           </h2>
         </div>
         
@@ -289,13 +291,13 @@ const Skills = () => {
         <div className="mt-16">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">Tools</span>
+              <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">{t.tools}</span>
               <h3 className="font-orbitron text-2xl md:text-3xl font-bold text-foreground uppercase tracking-wide">
-                Technologies
+                {t.technologies}
               </h3>
             </div>
             <p className="text-muted-foreground text-sm max-w-sm">
-              Professional software I work with daily
+              {t.professionalSoftware}
             </p>
           </div>
           

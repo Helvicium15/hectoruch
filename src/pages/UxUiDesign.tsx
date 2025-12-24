@@ -1,6 +1,8 @@
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "@/components/LanguageToggle";
 import calendarPreview from "@/assets/calendar-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
@@ -55,6 +57,8 @@ const projects: UxProject[] = [
 ];
 
 const UxUiDesign = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -65,12 +69,12 @@ const UxUiDesign = () => {
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
-            <span className="font-inter text-sm uppercase tracking-wider">Back</span>
+            <span className="font-inter text-sm uppercase tracking-wider">{t.back}</span>
           </Link>
           <h1 className="font-orbitron text-lg md:text-xl font-bold text-foreground uppercase tracking-wider">
-            UX/UI Design
+            {t.uxUiDesign}
           </h1>
-          <div className="w-20" /> {/* Spacer for centering */}
+          <LanguageToggle />
         </div>
       </header>
 
@@ -79,12 +83,12 @@ const UxUiDesign = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">Portfolio</span>
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase mb-4 block">{t.portfolio}</span>
             <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider mb-6">
-              UX/UI Projects
+              {t.uxUiProjects}
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A collection of user experience and interface design projects, showcasing intuitive interfaces that blend form and function seamlessly.
+              {t.uxUiProjectsDesc}
             </p>
           </div>
 
@@ -115,7 +119,7 @@ const UxUiDesign = () => {
                         </p>
                         <div className="pt-2">
                           <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                            View Project <ArrowUpRight className="w-4 h-4" />
+                            {t.viewProject} <ArrowUpRight className="w-4 h-4" />
                           </span>
                         </div>
                       </div>
@@ -138,7 +142,7 @@ const UxUiDesign = () => {
       <footer className="py-8 px-6 border-t border-border/30">
         <div className="max-w-7xl mx-auto text-center">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Hector Uribe. All rights reserved.
+            © {new Date().getFullYear()} Hector Uribe. {t.allRightsReserved}
           </p>
         </div>
       </footer>
