@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
-import calendarPreview from "@/assets/calendar-preview.png";
+import obsidianPreview from "@/assets/obsidian-ux-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import onlineshopPreview from "@/assets/onlineshop-preview.png";
@@ -19,10 +19,10 @@ interface UxProject {
 
 const projects: UxProject[] = [
   {
-    title: "Event Calendar App",
-    category: "Mobile App Design",
-    imageUrl: calendarPreview,
-    link: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/"
+    title: "Obsidian Crypto",
+    category: "Landing Page Design",
+    imageUrl: obsidianPreview,
+    link: "https://obsidian-rise-shine.lovable.app"
   },
   {
     title: "Ecothread Fashion",
