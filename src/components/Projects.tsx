@@ -2,7 +2,7 @@ import ProjectCard from "./ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
 import obsidianPreview from "@/assets/obsidian-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
-import calendarPreview from "@/assets/calendar-preview.png";
+import ecothreadPreview from "@/assets/ecothread-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
 import onlineshopPreview from "@/assets/onlineshop-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
@@ -31,10 +31,10 @@ const Projects = () => {
       link: "https://sketchfab.com/hectorz151"
     },
     {
-      title: "Calendar",
-      category: "Print Design",
-      imageUrl: calendarPreview,
-      link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
+      title: "EcoThread",
+      category: "Ecommerce Website",
+      imageUrl: ecothreadPreview,
+      link: "https://ecothread.lovable.app"
     },
     {
       title: "Mobile Design",
