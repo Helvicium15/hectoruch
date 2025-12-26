@@ -20,6 +20,7 @@ import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
 import graphicDesignPreview from "@/assets/graphic-design-preview.png";
 import webdevPreview from "@/assets/webdev-preview.png";
+import uxuiPreview from "@/assets/uxui-preview.png";
 
 interface Skill {
   name: string;
@@ -67,7 +68,7 @@ const Skills = () => {
       icon: Layers, 
       description: t.uxUiDesignDesc,
       color: "from-primary to-secondary", 
-      embedUrl: "https://xd.adobe.com/embed/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/", 
+      previewImage: uxuiPreview,
       internalRoute: "/ux-ui-design"
     },
     { 
