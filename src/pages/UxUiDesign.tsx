@@ -5,7 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import obsidianPreview from "@/assets/obsidian-ux-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
-import landingpagePreview from "@/assets/landingpage-preview.png";
+import onlyfranzPreview from "@/assets/onlyfranz-preview.png";
 import onlineshopPreview from "@/assets/onlineshop-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
@@ -31,10 +31,10 @@ const projects: UxProject[] = [
     link: "https://www.behance.net/hectoruribe2"
   },
   {
-    title: "Corporate Landing Page",
-    category: "Web Design",
-    imageUrl: landingpagePreview,
-    link: "https://www.behance.net/hectoruribe2"
+    title: "Only Franz",
+    category: "Recipe App",
+    imageUrl: onlyfranzPreview,
+    link: "https://onlyfranz.lovable.app"
   },
   {
     title: "Online Shop Dashboard",
