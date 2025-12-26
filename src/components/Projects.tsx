@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
-import ecothreadPreview from "@/assets/ecothread-preview.png";
+import obsidianPreview from "@/assets/obsidian-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import calendarPreview from "@/assets/calendar-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
@@ -13,10 +13,10 @@ const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
   const projects = [
     {
-      title: "EcoThread",
-      category: "Ecommerce Website",
-      imageUrl: ecothreadPreview,
-      link: "https://preview--ecothread.lovable.app/#impact"
+      title: "Obsidian",
+      category: "Crypto Landing Page",
+      imageUrl: obsidianPreview,
+      link: "https://obsidian-rise-shine.lovable.app"
     },
     {
       title: "Landingpage Webservice",
