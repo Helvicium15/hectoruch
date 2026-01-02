@@ -46,7 +46,7 @@ const projects: UxProject[] = [
     title: "Mobile App Concept",
     category: "Mobile UI/UX",
     imageUrl: mobilePreview,
-    link: "https://www.behance.net/hectoruribe2"
+    link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
   },
   {
     title: "Photo Gallery App",
