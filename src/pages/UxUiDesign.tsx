@@ -28,7 +28,7 @@ const projects: UxProject[] = [
     title: "Ecothread Fashion",
     category: "E-commerce Design",
     imageUrl: ecothreadPreview,
-    link: "https://www.behance.net/hectoruribe2"
+    link: "https://ecothread.lovable.app"
   },
   {
     title: "Only Franz",
