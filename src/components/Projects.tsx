@@ -4,8 +4,8 @@ import obsidianPreview from "@/assets/obsidian-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
-import onlineshopPreview from "@/assets/onlineshop-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
+import sentinelPreview from "@/assets/sentinel-preview.png";
 
 const Projects = () => {
   const { t } = useLanguage();
@@ -41,6 +41,12 @@ const Projects = () => {
       category: "Product",
       imageUrl: mobilePreview,
       link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
+    },
+    {
+      title: "SentinelOne",
+      category: "Dashboard Design",
+      imageUrl: sentinelPreview,
+      link: "https://sentinel-2025.vercel.app/"
     },
     {
       title: "Photograph",
