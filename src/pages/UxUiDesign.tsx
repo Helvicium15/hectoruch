@@ -6,7 +6,7 @@ import LanguageToggle from "@/components/LanguageToggle";
 import obsidianPreview from "@/assets/obsidian-ux-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import onlyfranzPreview from "@/assets/onlyfranz-preview.png";
-import onlineshopPreview from "@/assets/onlineshop-preview.png";
+import sentinelPreview from "@/assets/sentinel-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
 
@@ -37,10 +37,10 @@ const projects: UxProject[] = [
     link: "https://onlyfranz.lovable.app"
   },
   {
-    title: "Online Shop Dashboard",
+    title: "SentinelOne Dashboard",
     category: "Dashboard Design",
-    imageUrl: onlineshopPreview,
-    link: "https://www.behance.net/hectoruribe2"
+    imageUrl: sentinelPreview,
+    link: "https://sentinel-2025.vercel.app/"
   },
   {
     title: "Mobile App Concept",
