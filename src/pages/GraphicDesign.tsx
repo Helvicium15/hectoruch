@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
-
+import postersPreview from "@/assets/posters-preview.jpg";
 interface DesignProject {
   title: string;
   category: string;
@@ -45,7 +45,7 @@ const projects: DesignProject[] = [
   {
     title: "Posters",
     category: "Poster Design",
-    imageUrl: "/src/assets/posters-preview.jpg",
+    imageUrl: postersPreview,
     link: "https://www.behance.net/hectoruribe2"
   }
 ];
