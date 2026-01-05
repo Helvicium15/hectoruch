@@ -86,6 +86,7 @@ const Hero = () => {
           {/* Main Title */}
           <h1 
             className={`font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+            style={{ textShadow: '0 0 30px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)' }}
           >
             <span className="block text-foreground">HECTOR</span>
           </h1>
