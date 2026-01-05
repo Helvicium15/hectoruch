@@ -43,10 +43,10 @@ const projects: DesignProject[] = [
     link: "https://www.behance.net/hectoruribe2"
   },
   {
-    title: "Seasonal Calendar",
-    category: "Illustration",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/aa8f6c162725755.63df8a5c0d9c5.png",
-    link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
+    title: "Posters",
+    category: "Poster Design",
+    imageUrl: "/src/assets/posters-preview.jpg",
+    link: "https://www.behance.net/hectoruribe2"
   }
 ];
 
