@@ -2,6 +2,7 @@ import { ArrowDown, ArrowUpRight, Instagram, Send } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import heroVideo from "@/assets/hero-background.mp4";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -71,10 +72,25 @@ const Hero = () => {
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
           </div>
           
-          {/* Main Title */}
-          <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9]">
-            <span className="block text-foreground">HECTOR</span>
-          </h1>
+          {/* Main Title with Video Background */}
+          <div className="relative inline-block">
+            {/* Video Background behind HECTOR text */}
+            <div className="absolute inset-0 overflow-hidden rounded-lg">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-70"
+              >
+                <source src={heroVideo} type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-background/30" />
+            </div>
+            <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] px-4 py-2 relative z-10">
+              <span className="block text-foreground mix-blend-difference">HECTOR</span>
+            </h1>
+          </div>
           
           {/* Right side label */}
           <div className="flex justify-end mt-4 mb-8">
