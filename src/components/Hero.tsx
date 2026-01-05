@@ -46,10 +46,10 @@ const Hero = () => {
         
         {/* Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.about}</a>
-          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.skills}</a>
-          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.projects}</a>
-          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">{t.contact}</a>
+          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.about}</a>
+          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.skills}</a>
+          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.projects}</a>
+          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.contact}</a>
         </nav>
         
         <div className="flex items-center gap-4">
