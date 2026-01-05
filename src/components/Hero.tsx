@@ -66,7 +66,7 @@ const Hero = () => {
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Top label */}
           <div className={`mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase bg-black px-3 py-1.5 rounded-md">{t.visualDesigner}</span>
           </div>
           
           {/* Main Title */}
