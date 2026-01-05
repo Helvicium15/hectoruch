@@ -3,25 +3,41 @@ import { FaXTwitter } from "react-icons/fa6";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 import heroVideo from "@/assets/hero-background.mp4";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
-      {/* Full Background Video */}
+      {/* Full Background Video with Parallax */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
+        <div 
+          className="w-full h-[120%] absolute -top-[10%]"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+        </div>
         <div className="absolute inset-0 bg-background/50" />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       {/* Header */}
