@@ -45,8 +45,8 @@ const Skills = () => {
       icon: Palette, 
       description: t.graphicDesignDesc,
       color: "from-primary to-primary/70",
-      linkUrl: "https://www.behance.net/hectoruribe2",
-      previewImage: graphicDesignPreview
+      previewImage: graphicDesignPreview,
+      internalRoute: "/graphic-design"
     },
     { 
       name: t.modeling3d, 
