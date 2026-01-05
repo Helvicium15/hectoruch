@@ -9,6 +9,20 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
+      {/* Full Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-background/60" />
+      </div>
+
       {/* Header */}
       <header className="relative z-20 px-6 md:px-12 py-6 flex justify-between items-center">
         <div className="flex flex-col">
@@ -36,35 +50,6 @@ const Hero = () => {
 
       {/* Main Hero Content */}
       <div className="flex-1 relative px-6 md:px-12 flex items-center">
-        {/* Glass Spheres */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          {/* Main large sphere */}
-          <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px]">
-            {/* Outer glow */}
-            <div className="absolute inset-0 bg-gradient-radial from-primary/20 via-transparent to-transparent blur-3xl animate-pulse-glow" />
-            
-            {/* Glass sphere 1 */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/20 animate-float shadow-2xl">
-              <div className="absolute inset-4 rounded-full bg-gradient-to-br from-white/5 to-transparent" />
-              <div className="absolute top-8 left-8 w-16 h-16 rounded-full bg-white/10 blur-xl" />
-            </div>
-            
-            {/* Glass sphere 2 */}
-            <div className="absolute top-10 right-10 w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-white/10 to-transparent backdrop-blur-sm border border-white/15 animate-float animation-delay-2000 shadow-xl">
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/5 to-transparent" />
-            </div>
-            
-            {/* Glass sphere 3 */}
-            <div className="absolute bottom-10 left-5 w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-white/8 to-transparent backdrop-blur-sm border border-white/10 animate-float animation-delay-4000 shadow-lg">
-              <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/3 to-transparent" />
-            </div>
-            
-            {/* Neon light line */}
-            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-accent opacity-60 animate-neon-line" />
-            <div className="absolute top-1/3 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-secondary to-transparent opacity-40 animate-neon-line animation-delay-2000" />
-          </div>
-        </div>
-
         {/* Text Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Top label */}
@@ -72,25 +57,10 @@ const Hero = () => {
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
           </div>
           
-          {/* Main Title with Video Background */}
-          <div className="relative inline-block">
-            {/* Video Background behind HECTOR text */}
-            <div className="absolute inset-0 overflow-hidden rounded-lg">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover opacity-70"
-              >
-                <source src={heroVideo} type="video/mp4" />
-              </video>
-              <div className="absolute inset-0 bg-background/30" />
-            </div>
-            <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] px-4 py-2 relative z-10">
-              <span className="block text-foreground mix-blend-difference">HECTOR</span>
-            </h1>
-          </div>
+          {/* Main Title */}
+          <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9]">
+            <span className="block text-foreground">HECTOR</span>
+          </h1>
           
           {/* Right side label */}
           <div className="flex justify-end mt-4 mb-8">
