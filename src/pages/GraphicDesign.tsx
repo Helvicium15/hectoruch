@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import postersPreview from "@/assets/posters-preview.jpg";
-import calendarPreview from "@/assets/calendar-preview.png";
+import vegetablesCalendarPreview from "@/assets/vegetables-calendar-preview.png";
 
 interface DesignProject {
   title: string;
@@ -29,7 +29,7 @@ const projects: DesignProject[] = [
   {
     title: "Vegetables Calendar 2024",
     category: "Print Design",
-    imageUrl: calendarPreview,
+    imageUrl: vegetablesCalendarPreview,
     link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
   },
   {
