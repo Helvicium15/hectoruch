@@ -15,33 +15,15 @@ interface DesignProject {
 
 const projects: DesignProject[] = [
   {
-    title: "VHT Bank Branding",
-    category: "Brand Identity",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/f07c73162725755.63df8a5c0c8b4.png",
-    link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
-  },
-  {
-    title: "Vintage Posters",
-    category: "Poster Design",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/88c4e0103295149.5f4ae0f67d2d1.jpg",
-    link: "https://www.behance.net/gallery/103295149/Vintage-Posters"
-  },
-  {
     title: "Vegetables Calendar 2024",
     category: "Print Design",
     imageUrl: vegetablesCalendarPreview,
     link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
   },
   {
-    title: "Brand Guidelines",
-    category: "Visual Identity",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f7aa54103232695.5f49cb2d2b0d0.png",
-    link: "https://www.behance.net/gallery/103232695/Brand-Guidelines"
-  },
-  {
     title: "Logo Collection",
     category: "Logo Design",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/8a7d4c103212345.5f49a5c3c8d1e.png",
+    imageUrl: postersPreview,
     link: "https://www.behance.net/hectoruribe2"
   },
   {
