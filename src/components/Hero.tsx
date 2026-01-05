@@ -54,7 +54,7 @@ const Hero = () => {
         
         <div className="flex items-center gap-4">
           <LanguageToggle />
-          <a href="#contact" className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300">
+          <a href="#contact" className="px-5 py-2.5 rounded-full bg-black border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300">
             {t.startProject}
           </a>
         </div>
