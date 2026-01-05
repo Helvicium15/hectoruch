@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import postersPreview from "@/assets/posters-preview.jpg";
+
 interface DesignProject {
   title: string;
   category: string;
