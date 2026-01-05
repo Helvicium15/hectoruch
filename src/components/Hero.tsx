@@ -9,19 +9,18 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
-      {/* Background Video - Centered and smaller */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <div className="w-[60%] max-w-3xl aspect-video rounded-2xl overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
-        </div>
+      {/* Full Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-background/50" />
       </div>
 
       {/* Header */}
