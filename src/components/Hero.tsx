@@ -4,42 +4,33 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
 import heroVideo from "@/assets/hero-background.mp4";
 import { useEffect, useState } from "react";
-
 const Hero = () => {
-  const { t } = useLanguage();
+  const {
+    t
+  } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true
+    });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   useEffect(() => {
     // Trigger animations after component mounts
     const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
-  return (
-    <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
+  return <section className="min-h-screen flex flex-col relative overflow-hidden bg-background">
       {/* Full Background Video with Parallax */}
       <div className="absolute inset-0 z-0">
-        <div 
-          className="w-full h-[120%] absolute -top-[10%]"
-          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
+        <div className="w-full h-[120%] absolute -top-[10%]" style={{
+        transform: `translateY(${scrollY * 0.3}px)`
+      }}>
+          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
             <source src={heroVideo} type="video/mp4" />
           </video>
         </div>
@@ -63,10 +54,7 @@ const Hero = () => {
         
         <div className="flex items-center gap-4">
           <LanguageToggle />
-          <a 
-            href="#contact" 
-            className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300"
-          >
+          <a href="#contact" className="px-5 py-2.5 rounded-full border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300">
             {t.startProject}
           </a>
         </div>
@@ -77,49 +65,34 @@ const Hero = () => {
         {/* Text Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Top label */}
-          <div 
-            className={`mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
+          <div className={`mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
           </div>
           
           {/* Main Title */}
-          <h1 
-            className={`font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
-            style={{ textShadow: '0 0 30px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)' }}
-          >
+          <h1 className={`font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{
+          textShadow: '0 0 30px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--primary) / 0.2)'
+        }}>
             <span className="block text-foreground">HECTOR</span>
           </h1>
           
           {/* Right side label */}
-          <div 
-            className={`flex justify-end mt-4 mb-8 transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-          >
+          <div className={`flex justify-end mt-4 mb-8 transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.artist3d}</span>
           </div>
           
           {/* Description and CTA */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
-            <p 
-              className={`text-sm md:text-base text-muted-foreground leading-relaxed bg-black px-4 py-3 rounded-lg w-fit max-w-xs transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
+            <p className={`text-sm md:text-base text-muted-foreground leading-relaxed bg-black px-4 py-3 rounded-lg w-fit max-w-xs transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               {t.heroDescription}
             </p>
             
-            <div 
-              className={`flex items-center gap-4 transition-all duration-700 delay-[900ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-            >
-              <a 
-                href="#projects" 
-                className="group flex items-center gap-3 px-6 py-3 rounded-full bg-black border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
-              >
+            <div className={`flex items-center gap-4 transition-all duration-700 delay-[900ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <a href="#projects" className="group flex items-center gap-3 px-6 py-3 rounded-full bg-black border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300">
                 <span className="text-sm font-medium">{t.viewWork}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
-              <a 
-                href="#contact" 
-                className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300"
-              >
+              <a href="#contact" className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
                 <ArrowUpRight className="w-5 h-5" />
               </a>
             </div>
@@ -132,11 +105,7 @@ const Hero = () => {
         {/* Scroll Indicator */}
         <div className="relative w-20 h-20">
           <svg className="w-full h-full animate-rotate-slow" viewBox="0 0 100 100">
-            <path
-              id="textPath"
-              d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-              fill="none"
-            />
+            <path id="textPath" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none" />
             <text className="text-[10px] fill-muted-foreground uppercase tracking-[0.2em]">
               <textPath href="#textPath">
                 {t.scrollExplore}
@@ -149,35 +118,8 @@ const Hero = () => {
         </div>
         
         {/* Social Links */}
-        <div className="flex items-center gap-4">
-          <a 
-            href="https://instagram.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
-          >
-            <Instagram className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://x.com" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
-          >
-            <FaXTwitter className="w-4 h-4" />
-          </a>
-          <a 
-            href="https://t.me" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-10 h-10 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-foreground hover:text-background transition-all duration-300"
-          >
-            <Send className="w-4 h-4" />
-          </a>
-        </div>
+        
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
