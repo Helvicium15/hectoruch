@@ -111,7 +111,7 @@ const Hero = () => {
             >
               <a 
                 href="#projects" 
-                className="group flex items-center gap-3 px-6 py-3 rounded-full border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
+                className="group flex items-center gap-3 px-6 py-3 rounded-full bg-black border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
               >
                 <span className="text-sm font-medium">{t.viewWork}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
