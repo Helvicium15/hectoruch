@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import UxUiDesign from "./pages/UxUiDesign";
 import GraphicDesign from "./pages/GraphicDesign";
+import LogoCollection from "./pages/LogoCollection";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/ux-ui-design" element={<UxUiDesign />} />
             <Route path="/graphic-design" element={<GraphicDesign />} />
+            <Route path="/logo-collection" element={<LogoCollection />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
