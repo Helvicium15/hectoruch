@@ -101,6 +101,7 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
             <p 
               className={`text-sm md:text-base text-primary max-w-xs leading-relaxed transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              style={{ textShadow: '0 0 20px hsl(var(--primary) / 0.5), 0 0 40px hsl(var(--primary) / 0.3)' }}
             >
               {t.heroDescription}
             </p>
