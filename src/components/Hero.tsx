@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 const Hero = () => {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,12 @@ const Hero = () => {
     
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    // Trigger animations after component mounts
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -41,7 +48,7 @@ const Hero = () => {
       </div>
 
       {/* Header */}
-      <header className="relative z-20 px-6 md:px-12 py-6 flex justify-between items-center">
+      <header className={`relative z-20 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
         <div className="flex flex-col">
           <h2 className="text-lg md:text-xl font-medium tracking-wide text-foreground">HECTOR URIBE</h2>
         </div>
@@ -70,27 +77,37 @@ const Hero = () => {
         {/* Text Content */}
         <div className="relative z-10 max-w-7xl mx-auto w-full">
           {/* Top label */}
-          <div className="mb-8">
+          <div 
+            className={`mb-8 transition-all duration-700 delay-200 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.visualDesigner}</span>
           </div>
           
           {/* Main Title */}
-          <h1 className="font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9]">
+          <h1 
+            className={`font-orbitron font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-[0.2em] leading-[0.9] transition-all duration-1000 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+          >
             <span className="block text-foreground">HECTOR</span>
           </h1>
           
           {/* Right side label */}
-          <div className="flex justify-end mt-4 mb-8">
+          <div 
+            className={`flex justify-end mt-4 mb-8 transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+          >
             <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.artist3d}</span>
           </div>
           
           {/* Description and CTA */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-8">
-            <p className="text-sm md:text-base text-muted-foreground max-w-xs leading-relaxed">
+            <p 
+              className={`text-sm md:text-base text-muted-foreground max-w-xs leading-relaxed transition-all duration-700 delay-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               {t.heroDescription}
             </p>
             
-            <div className="flex items-center gap-4">
+            <div 
+              className={`flex items-center gap-4 transition-all duration-700 delay-[900ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+            >
               <a 
                 href="#projects" 
                 className="group flex items-center gap-3 px-6 py-3 rounded-full border border-foreground/20 hover:bg-foreground hover:text-background transition-all duration-300"
@@ -110,7 +127,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="relative z-20 px-6 md:px-12 py-8 flex justify-between items-end">
+      <div className={`relative z-20 px-6 md:px-12 py-8 flex justify-between items-end transition-all duration-700 delay-[1100ms] ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         {/* Scroll Indicator */}
         <div className="relative w-20 h-20">
           <svg className="w-full h-full animate-rotate-slow" viewBox="0 0 100 100">
