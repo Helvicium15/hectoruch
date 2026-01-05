@@ -78,7 +78,7 @@ const Hero = () => {
           
           {/* Right side label */}
           <div className={`flex justify-end mt-4 mb-8 transition-all duration-700 delay-500 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">{t.artist3d}</span>
+            <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase bg-black px-3 py-1.5 rounded-md">{t.artist3d}</span>
           </div>
           
           {/* Description and CTA */}
