@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import postersPreview from "@/assets/posters-preview.jpg";
+import calendarPreview from "@/assets/calendar-preview.png";
 
 interface DesignProject {
   title: string;
@@ -26,10 +27,10 @@ const projects: DesignProject[] = [
     link: "https://www.behance.net/gallery/103295149/Vintage-Posters"
   },
   {
-    title: "Restaurant Menu",
+    title: "Vegetables Calendar 2024",
     category: "Print Design",
-    imageUrl: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/5bfb02103253869.5f4a05aa5f8b0.png",
-    link: "https://www.behance.net/gallery/103253869/Restaurant-Menu-Design"
+    imageUrl: calendarPreview,
+    link: "https://www.behance.net/gallery/162725755/VEGETABLES-SEASONAL-CALENDAR-2024"
   },
   {
     title: "Brand Guidelines",
