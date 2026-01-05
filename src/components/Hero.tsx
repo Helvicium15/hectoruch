@@ -92,7 +92,7 @@ const Hero = () => {
                 <span className="text-sm font-medium">{t.viewWork}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
-              <a href="#contact" className="w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
+              <a href="#contact" className="w-12 h-12 rounded-full bg-black border border-foreground/20 flex items-center justify-center hover:bg-primary hover:border-primary transition-all duration-300">
                 <ArrowUpRight className="w-5 h-5" />
               </a>
             </div>
