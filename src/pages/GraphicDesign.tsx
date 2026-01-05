@@ -11,6 +11,7 @@ interface DesignProject {
   category: string;
   imageUrl: string;
   link: string;
+  isInternal?: boolean;
 }
 
 const projects: DesignProject[] = [
@@ -24,7 +25,8 @@ const projects: DesignProject[] = [
     title: "Logo Collection",
     category: "Logo Design",
     imageUrl: postersPreview,
-    link: "https://www.behance.net/hectoruribe2"
+    link: "/logo-collection",
+    isInternal: true
   },
   {
     title: "Posters",
@@ -79,46 +81,51 @@ const GraphicDesign = () => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {projects.map((project, index) => (
-              <a 
-                key={index}
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="group block"
-              >
-                <Card className="overflow-hidden border border-border hover:border-primary/30 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-card/80 backdrop-blur-sm">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                    <img 
-                      src={project.imageUrl} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-secondary/90 to-accent/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                      <div className="text-center space-y-3 px-6">
-                        <h3 className="font-orbitron text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
-                          {project.title}
-                        </h3>
-                        <p className="font-inter text-sm text-white/90 uppercase tracking-wider">
-                          {project.category}
-                        </p>
-                        <div className="pt-2">
-                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                            {t.viewProject} <ArrowUpRight className="w-4 h-4" />
-                          </span>
+            {projects.map((project, index) => {
+              const CardWrapper = project.isInternal ? Link : 'a';
+              const linkProps = project.isInternal 
+                ? { to: project.link }
+                : { href: project.link, target: "_blank", rel: "noopener noreferrer" };
+              
+              return (
+                <CardWrapper
+                  key={index}
+                  {...linkProps as any}
+                  className="group block"
+                >
+                  <Card className="overflow-hidden border border-border hover:border-primary/30 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2 bg-card/80 backdrop-blur-sm">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                      <img 
+                        src={project.imageUrl} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-secondary/90 to-accent/90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                        <div className="text-center space-y-3 px-6">
+                          <h3 className="font-orbitron text-xl md:text-2xl font-bold text-white uppercase tracking-wide">
+                            {project.title}
+                          </h3>
+                          <p className="font-inter text-sm text-white/90 uppercase tracking-wider">
+                            {project.category}
+                          </p>
+                          <div className="pt-2">
+                            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                              {t.viewProject} <ArrowUpRight className="w-4 h-4" />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-5">
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">{project.category}</span>
-                    <h3 className="font-orbitron text-base font-semibold text-foreground uppercase tracking-wide mt-1">
-                      {project.title}
-                    </h3>
-                  </div>
-                </Card>
-              </a>
-            ))}
+                    <div className="p-5">
+                      <span className="text-xs text-muted-foreground uppercase tracking-wider">{project.category}</span>
+                      <h3 className="font-orbitron text-base font-semibold text-foreground uppercase tracking-wide mt-1">
+                        {project.title}
+                      </h3>
+                    </div>
+                  </Card>
+                </CardWrapper>
+              );
+            })}
           </div>
         </div>
       </main>
