@@ -134,7 +134,7 @@ const LogoCarousel = ({
 
 const LogoCollection = () => {
   const { t, language } = useLanguage();
-  const [zoomImage, setZoomImage] = useState<{ src: string; title: string } | null>(null);
+  const [zoomData, setZoomData] = useState<{ images: string[]; title: string; currentIndex: number } | null>(null);
 
   const pageTitle = language === "de" ? "Logo Kollektion" : "Logo Collection";
   const pageSubtitle = language === "de" ? "Portfolio" : "Portfolio";
@@ -144,7 +144,25 @@ const LogoCollection = () => {
     : "Explore my collection of logo designs and visual identities across various industries.";
 
   const handleImageClick = (project: LogoProject, imageIndex: number) => {
-    setZoomImage({ src: project.images[imageIndex], title: project.title });
+    setZoomData({ images: project.images, title: project.title, currentIndex: imageIndex });
+  };
+
+  const goToZoomPrevious = () => {
+    if (zoomData) {
+      setZoomData({
+        ...zoomData,
+        currentIndex: zoomData.currentIndex === 0 ? zoomData.images.length - 1 : zoomData.currentIndex - 1
+      });
+    }
+  };
+
+  const goToZoomNext = () => {
+    if (zoomData) {
+      setZoomData({
+        ...zoomData,
+        currentIndex: zoomData.currentIndex === zoomData.images.length - 1 ? 0 : zoomData.currentIndex + 1
+      });
+    }
   };
 
   return (
@@ -223,21 +241,56 @@ const LogoCollection = () => {
       </footer>
 
       {/* Zoom Modal */}
-      <Dialog open={!!zoomImage} onOpenChange={() => setZoomImage(null)}>
+      <Dialog open={!!zoomData} onOpenChange={() => setZoomData(null)}>
         <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 bg-background/95 backdrop-blur-xl border-border/50">
           <button
-            onClick={() => setZoomImage(null)}
+            onClick={() => setZoomData(null)}
             className="absolute top-4 right-4 z-10 bg-background/80 backdrop-blur-sm rounded-full p-2 hover:bg-background transition-colors"
           >
             <X className="w-5 h-5 text-foreground" />
           </button>
-          {zoomImage && (
+          {zoomData && (
             <div className="relative w-full h-full flex items-center justify-center p-4">
+              {/* Navigation arrows */}
+              {zoomData.images.length > 1 && (
+                <>
+                  <button
+                    onClick={goToZoomPrevious}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-3 hover:bg-background transition-colors z-10"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-foreground" />
+                  </button>
+                  <button
+                    onClick={goToZoomNext}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 backdrop-blur-sm rounded-full p-3 hover:bg-background transition-colors z-10"
+                  >
+                    <ChevronRight className="w-6 h-6 text-foreground" />
+                  </button>
+                </>
+              )}
+              
               <img
-                src={zoomImage.src}
-                alt={zoomImage.title}
+                src={zoomData.images[zoomData.currentIndex]}
+                alt={`${zoomData.title} - ${zoomData.currentIndex + 1}`}
                 className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
+              
+              {/* Dots indicator */}
+              {zoomData.images.length > 1 && (
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                  {zoomData.images.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setZoomData({ ...zoomData, currentIndex: index })}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        index === zoomData.currentIndex 
+                          ? "bg-primary w-5" 
+                          : "bg-foreground/40 hover:bg-foreground/60"
+                      }`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           )}
         </DialogContent>
