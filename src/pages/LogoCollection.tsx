@@ -6,19 +6,24 @@ import LanguageToggle from "@/components/LanguageToggle";
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import postersPreview from "@/assets/posters-preview.jpg";
+import aeroleaf01 from "@/assets/aeroleaf-01.jpg";
+import aeroleaf02 from "@/assets/aeroleaf-02.jpg";
+import aeroleaf03 from "@/assets/aeroleaf-03.jpg";
 
 interface LogoProject {
   title: string;
   category: string;
   images: string[];
+  description?: string;
 }
 
-// Placeholder images - replace with actual logo images
+// Logo projects data
 const logoProjects: LogoProject[] = [
   {
-    title: "Tech Startup",
-    category: "Brand Identity",
-    images: [postersPreview, postersPreview, postersPreview]
+    title: "AeroLeaf",
+    category: "AgriTech / Urban Vertical Farming",
+    images: [aeroleaf01, aeroleaf02, aeroleaf03],
+    description: "A Berlin-based tech startup designing smart hydroponic systems for growing vegetables in small apartments and offices without direct natural light. Targeting eco-conscious urban professionals (25-40), the brand embodies innovation, cleanliness, efficiency, and a futuristic yet organic personality. Core concept: \"Where nature meets German engineering.\""
   },
   {
     title: "Restaurant Brand",
@@ -192,6 +197,11 @@ const LogoCollection = () => {
                   <h3 className="font-orbitron text-base font-semibold text-foreground uppercase tracking-wide mt-1">
                     {project.title}
                   </h3>
+                  {project.description && (
+                    <p className="text-sm text-muted-foreground mt-3 leading-relaxed">
+                      {project.description}
+                    </p>
+                  )}
                 </div>
               </Card>
             ))}
