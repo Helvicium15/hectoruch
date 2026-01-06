@@ -9,6 +9,9 @@ import postersPreview from "@/assets/posters-preview.jpg";
 import aeroleaf01 from "@/assets/aeroleaf-01.jpg";
 import aeroleaf02 from "@/assets/aeroleaf-02.jpg";
 import aeroleaf03 from "@/assets/aeroleaf-03.jpg";
+import nordwand01 from "@/assets/nordwand-01.jpg";
+import nordwand02 from "@/assets/nordwand-02.jpg";
+import nordwand03 from "@/assets/nordwand-03.jpg";
 
 interface LogoProject {
   title: string;
@@ -26,9 +29,10 @@ const logoProjects: LogoProject[] = [
     description: "A Berlin-based tech startup designing smart hydroponic systems for growing vegetables in small apartments and offices without direct natural light. Targeting eco-conscious urban professionals (25-40), the brand embodies innovation, cleanliness, efficiency, and a futuristic yet organic personality. Core concept: \"Where nature meets German engineering.\""
   },
   {
-    title: "Restaurant Brand",
-    category: "Logo Design",
-    images: [postersPreview, postersPreview]
+    title: "NordWand",
+    category: "Outdoor Fashion / Mountain Apparel",
+    images: [nordwand01, nordwand02, nordwand03],
+    description: "A Hamburg-based premium technical clothing brand for extreme climates, focused on 100% recycled materials and urban monochromatic aesthetics. Targeting adventurers, climbers, and rainy city dwellers who value the 'Gorpcore' aesthetic. The brand embodies resilience, stoicism, and minimalism. Core concept: \"Protection against the elements.\""
   },
   {
     title: "Fashion Label",
