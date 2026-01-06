@@ -12,6 +12,9 @@ import aeroleaf03 from "@/assets/aeroleaf-03.jpg";
 import nordwand01 from "@/assets/nordwand-01.jpg";
 import nordwand02 from "@/assets/nordwand-02.jpg";
 import nordwand03 from "@/assets/nordwand-03.jpg";
+import sussmund01 from "@/assets/sussmund-01.jpg";
+import sussmund02 from "@/assets/sussmund-02.jpg";
+import sussmund03 from "@/assets/sussmund-03.jpg";
 
 interface LogoProject {
   title: string;
@@ -33,6 +36,12 @@ const logoProjects: LogoProject[] = [
     category: "Outdoor Fashion / Mountain Apparel",
     images: [nordwand01, nordwand02, nordwand03],
     description: "A Hamburg-based premium technical clothing brand for extreme climates, focused on 100% recycled materials and urban monochromatic aesthetics. Targeting adventurers, climbers, and rainy city dwellers who value the 'Gorpcore' aesthetic. The brand embodies resilience, stoicism, and minimalism. Core concept: \"Protection against the elements.\""
+  },
+  {
+    title: "SüßMund Pâtisserie",
+    category: "Gastronomy / Fine Pastry",
+    images: [sussmund01, sussmund02, sussmund03],
+    description: "A Cologne-based boutique pastry shop that blends French pâtisserie with traditional German ingredients like marzipan and forest berries. Targeting couples, wedding planners, and lovers of affordable luxury. The brand embodies delicacy, sweetness, sophistication, and romance. Core concept: \"Little edible jewels.\""
   }
 ];
 
