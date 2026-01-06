@@ -5,6 +5,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "@/components/LanguageToggle";
 import postersPreview from "@/assets/posters-preview.jpg";
 import vegetablesCalendarPreview from "@/assets/vegetables-calendar-preview.png";
+import logoCollectionPreview from "@/assets/logo-collection-preview.jpg";
 
 interface DesignProject {
   title: string;
@@ -24,7 +25,7 @@ const projects: DesignProject[] = [
   {
     title: "Logo Collection",
     category: "Logo Design",
-    imageUrl: postersPreview,
+    imageUrl: logoCollectionPreview,
     link: "/logo-collection",
     isInternal: true
   },
