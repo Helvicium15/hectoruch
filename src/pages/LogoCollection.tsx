@@ -33,26 +33,6 @@ const logoProjects: LogoProject[] = [
     category: "Outdoor Fashion / Mountain Apparel",
     images: [nordwand01, nordwand02, nordwand03],
     description: "A Hamburg-based premium technical clothing brand for extreme climates, focused on 100% recycled materials and urban monochromatic aesthetics. Targeting adventurers, climbers, and rainy city dwellers who value the 'Gorpcore' aesthetic. The brand embodies resilience, stoicism, and minimalism. Core concept: \"Protection against the elements.\""
-  },
-  {
-    title: "Fashion Label",
-    category: "Visual Identity",
-    images: [postersPreview, postersPreview, postersPreview]
-  },
-  {
-    title: "Fitness Studio",
-    category: "Brand Mark",
-    images: [postersPreview, postersPreview]
-  },
-  {
-    title: "Creative Agency",
-    category: "Logo System",
-    images: [postersPreview, postersPreview, postersPreview]
-  },
-  {
-    title: "E-commerce",
-    category: "Brand Identity",
-    images: [postersPreview, postersPreview]
   }
 ];
 
