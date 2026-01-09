@@ -50,12 +50,6 @@ const projects: UxProject[] = [
     link: "https://xd.adobe.com/view/686d220c-8ac2-4168-8435-e61ee5c05780-3d3e/"
   },
   {
-    title: "Photo Gallery App",
-    category: "App Redesign",
-    imageUrl: unsplashPreview,
-    link: "https://www.behance.net/hectoruribe2"
-  },
-  {
     title: "SaaS Dashboard",
     category: "Landing Page & Dashboard",
     imageUrl: saasDashboardPreview,
