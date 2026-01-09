@@ -9,6 +9,7 @@ import onlyfranzPreview from "@/assets/onlyfranz-preview.png";
 import sentinelPreview from "@/assets/sentinel-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
 import unsplashPreview from "@/assets/unsplash-preview.png";
+import saasDashboardPreview from "@/assets/saas-dashboard-preview.png";
 
 interface UxProject {
   title: string;
@@ -53,6 +54,12 @@ const projects: UxProject[] = [
     category: "App Redesign",
     imageUrl: unsplashPreview,
     link: "https://www.behance.net/hectoruribe2"
+  },
+  {
+    title: "SaaS Dashboard",
+    category: "Landing Page & Dashboard",
+    imageUrl: saasDashboardPreview,
+    link: "https://xd.adobe.com/view/fd07470b-99a3-4e6f-b4ef-9558d656f931-a854/"
   }
 ];
 
