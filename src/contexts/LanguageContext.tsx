@@ -3,6 +3,8 @@ import { createContext, useContext, useState, ReactNode } from "react";
 type Language = "en" | "de";
 
 interface Translations {
+  // Mosaic
+  gallery: string;
   // Hero
   visualDesigner: string;
   artist3d: string;
@@ -97,6 +99,7 @@ const translations: Record<Language, Translations> = {
     focusAreas: "Focus Areas",
     // Skills
     services: "Services",
+    gallery: "Gallery",
     whatIBest: "What I Do Best",
     tools: "Tools",
     technologies: "Technologies",
@@ -160,6 +163,7 @@ const translations: Record<Language, Translations> = {
     focusAreas: "Schwerpunkte",
     // Skills
     services: "Dienstleistungen",
+    gallery: "Galerie",
     whatIBest: "Was ich am besten kann",
     tools: "Werkzeuge",
     technologies: "Technologien",

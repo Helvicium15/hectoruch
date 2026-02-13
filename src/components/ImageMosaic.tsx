@@ -1,3 +1,4 @@
+import { useLanguage } from "@/contexts/LanguageContext";
 import mosaicAztec from "@/assets/mosaic-aztec.png";
 import mosaicCandyGun from "@/assets/mosaic-candy-gun.png";
 import mosaicFrog from "@/assets/mosaic-frog.png";
@@ -11,9 +12,17 @@ const images = [
 ];
 
 const ImageMosaic = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 px-6 bg-background">
       <div className="max-w-7xl mx-auto">
+        <div className="flex flex-col items-center text-center gap-6 mb-12">
+          <span className="text-xs tracking-[0.3em] text-muted-foreground uppercase">3D</span>
+          <h2 className="font-orbitron text-3xl md:text-5xl font-bold text-foreground uppercase tracking-wider">
+            {t.gallery}
+          </h2>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
