@@ -8,8 +8,10 @@ import mosaicSweet from "@/assets/mosaic-sweet.png";
 import mosaicMetaball from "@/assets/mosaic-metaball.png";
 import mosaicSmile from "@/assets/mosaic-smile.png";
 import mosaicRobot from "@/assets/mosaic-robot.png";
+import mosaicSentinel from "@/assets/mosaic-sentinel.png";
 
 const images = [
+  { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
   { src: mosaicAztec, alt: "Aztec Priest", category: "3D Modeling" },
   { src: mosaicCandyGun, alt: "Candy Gun", category: "3D Modeling" },
   { src: mosaicFrog, alt: "Boxing Frog", category: "3D Modeling" },
@@ -103,6 +105,16 @@ const ImageMosaic = () => {
                   {image.alt}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1">{image.category}</p>
+                {image.link && (
+                  <a
+                    href={image.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-xs font-orbitron text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
+                  >
+                    Ver proyecto →
+                  </a>
+                )}
               </div>
             </div>
           </div>
