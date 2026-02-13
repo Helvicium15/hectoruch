@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Problems from "@/components/Problems";
 import Solutions from "@/components/Solutions";
 import About from "@/components/About";
+import ImageMosaic from "@/components/ImageMosaic";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
@@ -14,6 +15,7 @@ const Index = () => {
       
       
       <About />
+      <ImageMosaic />
       <Skills />
       <Projects />
       <Contact />
