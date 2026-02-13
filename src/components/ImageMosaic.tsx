@@ -3,12 +3,16 @@ import mosaicAztec from "@/assets/mosaic-aztec.png";
 import mosaicCandyGun from "@/assets/mosaic-candy-gun.png";
 import mosaicFrog from "@/assets/mosaic-frog.png";
 import mosaicSweet from "@/assets/mosaic-sweet.png";
+import mosaicMetaball from "@/assets/mosaic-metaball.png";
+import mosaicSmile from "@/assets/mosaic-smile.png";
 
 const images = [
   { src: mosaicAztec, alt: "Aztec Priest 3D Model" },
   { src: mosaicCandyGun, alt: "Candy Gun 3D Model" },
   { src: mosaicFrog, alt: "Boxing Frog 3D Model" },
   { src: mosaicSweet, alt: "Sweet Gummy Bears Poster" },
+  { src: mosaicMetaball, alt: "Metaball 3D Art" },
+  { src: mosaicSmile, alt: "Smile Grenade Art" },
 ];
 
 const ImageMosaic = () => {
@@ -23,7 +27,7 @@ const ImageMosaic = () => {
             {t.gallery}
           </h2>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
           {images.map((image, index) => (
             <div
               key={index}
