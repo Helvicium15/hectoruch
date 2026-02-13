@@ -7,6 +7,7 @@ import mosaicFrog from "@/assets/mosaic-frog.png";
 import mosaicSweet from "@/assets/mosaic-sweet.png";
 import mosaicMetaball from "@/assets/mosaic-metaball.png";
 import mosaicSmile from "@/assets/mosaic-smile.png";
+import mosaicRobot from "@/assets/mosaic-robot.png";
 
 const images = [
   { src: mosaicAztec, alt: "Aztec Priest", category: "3D Modeling" },
@@ -15,6 +16,7 @@ const images = [
   { src: mosaicSweet, alt: "Sweet Poster", category: "Graphic Design" },
   { src: mosaicMetaball, alt: "Metaball", category: "3D Art" },
   { src: mosaicSmile, alt: "Smile Grenade", category: "Graphic Design" },
+  { src: mosaicRobot, alt: "Robot", category: "3D Modeling" },
 ];
 
 const ImageMosaic = () => {
