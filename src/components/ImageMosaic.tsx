@@ -9,9 +9,11 @@ import mosaicMetaball from "@/assets/mosaic-metaball.png";
 import mosaicSmile from "@/assets/mosaic-smile.png";
 import mosaicRobot from "@/assets/mosaic-robot.png";
 import mosaicSentinel from "@/assets/mosaic-sentinel.png";
+import mosaicSavings from "@/assets/mosaic-savings.jpg";
 
 const images = [
   { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
+  { src: mosaicSavings, alt: "Squishy Savings", category: "UX/UI Design", link: "https://squishy-savings-app.vercel.app/" },
   { src: mosaicAztec, alt: "Aztec Priest", category: "3D Modeling" },
   { src: mosaicCandyGun, alt: "Candy Gun", category: "3D Modeling" },
   { src: mosaicFrog, alt: "Boxing Frog", category: "3D Modeling" },
