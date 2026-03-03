@@ -66,6 +66,17 @@ interface Translations {
   uxUiProjects: string;
   uxUiProjectsDesc: string;
   viewProject: string;
+  // How I Work
+  howIWork: string;
+  howProcess: string;
+  howStep1Title: string;
+  howStep1Desc: string;
+  howStep2Title: string;
+  howStep2Desc: string;
+  howStep3Title: string;
+  howStep3Desc: string;
+  howStep4Title: string;
+  howStep4Desc: string;
 }
 
 const translations: Record<Language, Translations> = {
@@ -132,6 +143,17 @@ const translations: Record<Language, Translations> = {
     uxUiProjects: "UX/UI Projects",
     uxUiProjectsDesc: "A collection of user experience and interface design projects, showcasing intuitive interfaces that blend form and function seamlessly.",
     viewProject: "View Project",
+    // How I Work
+    howIWork: "How I Work",
+    howProcess: "Process",
+    howStep1Title: "Discovery",
+    howStep1Desc: "Understanding your vision, goals, and target audience to lay the foundation for a successful project.",
+    howStep2Title: "Design",
+    howStep2Desc: "Crafting visual concepts and prototypes that bring ideas to life with creativity and precision.",
+    howStep3Title: "Development",
+    howStep3Desc: "Building functional, responsive solutions with clean code and attention to every detail.",
+    howStep4Title: "Delivery",
+    howStep4Desc: "Polishing, testing, and launching the final product ready to make an impact.",
   },
   de: {
     // Hero
@@ -196,6 +218,17 @@ const translations: Record<Language, Translations> = {
     uxUiProjects: "UX/UI Projekte",
     uxUiProjectsDesc: "Eine Sammlung von User Experience und Interface Design Projekten, die intuitive Benutzeroberflächen zeigen, die Form und Funktion nahtlos verbinden.",
     viewProject: "Projekt ansehen",
+    // How I Work
+    howIWork: "So arbeite ich",
+    howProcess: "Prozess",
+    howStep1Title: "Entdeckung",
+    howStep1Desc: "Ihre Vision, Ziele und Zielgruppe verstehen, um die Grundlage für ein erfolgreiches Projekt zu schaffen.",
+    howStep2Title: "Gestaltung",
+    howStep2Desc: "Visuelle Konzepte und Prototypen entwickeln, die Ideen mit Kreativität und Präzision zum Leben erwecken.",
+    howStep3Title: "Entwicklung",
+    howStep3Desc: "Funktionale, responsive Lösungen mit sauberem Code und Liebe zum Detail erstellen.",
+    howStep4Title: "Auslieferung",
+    howStep4Desc: "Das Endprodukt verfeinern, testen und starten – bereit, Wirkung zu erzielen.",
   },
 };
 
