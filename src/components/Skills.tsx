@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Palette, Pen, Code, Camera, Box, Layers, ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Palette, Pen, Code, Camera, Box, Layers, ArrowUpRight, ChevronLeft, ChevronRight, Image, PenTool, Film, BookOpen, Smartphone, FileCode } from "lucide-react";
 import { 
-  SiAdobephotoshop, 
-  SiAdobeillustrator, 
-  SiAdobeaftereffects, 
-  SiAdobeindesign, 
-  SiAdobexd, 
   SiAutodesk,
   SiHtml5,
-  SiCss3,
   SiFigma,
   SiCanva,
   SiWebflow
@@ -304,15 +298,15 @@ const Skills = () => {
           
           <div className="grid grid-cols-4 md:grid-cols-8 gap-3 md:gap-4">
             {[
-              { name: "Photoshop", icon: SiAdobephotoshop, color: "#31A8FF" },
-              { name: "Illustrator", icon: SiAdobeillustrator, color: "#FF9A00" },
-              { name: "After Effects", icon: SiAdobeaftereffects, color: "#9999FF" },
-              { name: "InDesign", icon: SiAdobeindesign, color: "#FF3366" },
-              { name: "Adobe XD", icon: SiAdobexd, color: "#FF61F6" },
+              { name: "Photoshop", icon: Image, color: "#31A8FF" },
+              { name: "Illustrator", icon: PenTool, color: "#FF9A00" },
+              { name: "After Effects", icon: Film, color: "#9999FF" },
+              { name: "InDesign", icon: BookOpen, color: "#FF3366" },
+              { name: "Adobe XD", icon: Smartphone, color: "#FF61F6" },
               { name: "Maya", icon: SiAutodesk, color: "#0696D7" },
               { name: "3DS Max", icon: SiAutodesk, color: "#37A5CC" },
               { name: "HTML5", icon: SiHtml5, color: "#E34F26" },
-              { name: "CSS3", icon: SiCss3, color: "#1572B6" },
+              { name: "CSS3", icon: FileCode, color: "#1572B6" },
               { name: "Figma", icon: SiFigma, color: "#F24E1E" },
               { name: "Canva", icon: SiCanva, color: "#00C4CC" },
               { name: "Webflow", icon: SiWebflow, color: "#4353FF" },
