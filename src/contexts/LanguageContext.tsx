@@ -111,7 +111,7 @@ const translations: Record<Language, Translations> = {
     // Skills
     services: "Services",
     gallery: "Gallery",
-    whatIBest: "What I Do Best",
+    whatIBest: "My Expertise",
     tools: "Tools",
     technologies: "Technologies",
     professionalSoftware: "Professional software I work with daily",
@@ -186,7 +186,7 @@ const translations: Record<Language, Translations> = {
     // Skills
     services: "Dienstleistungen",
     gallery: "Galerie",
-    whatIBest: "Was ich am besten kann",
+    whatIBest: "Meine Expertise",
     tools: "Werkzeuge",
     technologies: "Technologien",
     professionalSoftware: "Professionelle Software, mit der ich täglich arbeite",
