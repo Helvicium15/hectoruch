@@ -147,7 +147,7 @@ const translations: Record<Language, Translations> = {
     howIWork: "How I Work",
     howProcess: "Process",
     howStep1Title: "Vision & Strategy",
-    howStep1Desc: "Before the first pixel is placed, I analyze the goal. I don't just visualize the end product—I question its purpose to create user-centered solutions with a clear focus on UX/UI design. Good design always starts with understanding the core problem.",
+    howStep1Desc: "Before the first pixel is placed, I analyze the goal. I don't just visualize the end product—I question its purpose to create user-centered solutions with a clear focus on the design. Good design always starts with understanding the core problem.",
     howStep2Title: "Research & Inspiration",
     howStep2Desc: "To develop innovative concepts, I draw from diverse sources. I combine current digital trends with classic design principles and influences from the 3D world. This cross-media approach ensures fresh, audience-oriented ideas.",
     howStep3Title: "Methodology & Tools",
