@@ -222,13 +222,13 @@ const translations: Record<Language, Translations> = {
     howIWork: "So arbeite ich",
     howProcess: "Prozess",
     howStep1Title: "Vision & Strategie",
-    howStep1Desc: "Bevor der erste Pixel gesetzt wird, analysiere ich das Ziel. Ich visualisiere nicht nur das Endprodukt, sondern hinterfrage den Zweck, um nutzerzentrierte Lösungen mit einem klaren Fokus auf UX/UI-Design zu schaffen. Gutes Design beginnt immer mit dem Verstehen des Kernproblems.",
+    howStep1Desc: "Bevor der erste Pixel gesetzt wird, analysiere ich das Ziel. Ich visualisiere nicht nur das Endprodukt, sondern hinterfrage den Zweck, um nutzerzentrierte Lösungen mit einem klaren Fokus auf Design zu schaffen. Gutes Design beginnt immer mit dem Verstehen des Kernproblems.",
     howStep2Title: "Recherche & Inspiration",
     howStep2Desc: "Um innovative Konzepte zu entwickeln, schöpfe ich aus vielfältigen Quellen. Ich verbinde aktuelle digitale Trends mit klassischen Designprinzipien und Einflüssen aus der 3D-Welt. Dieser medienübergreifende Ansatz sorgt für frische und zielgruppenorientierte Ideen.",
     howStep3Title: "Methodik & Tools",
     howStep3Desc: "Dank meiner fundierten Erfahrung wähle ich stets die effizienteste Technik für das jeweilige Projekt. Ob klassische Adobe CC, Figma für Web-Layouts, 3D-Software oder der gezielte Einsatz von KI-Tools wie Midjourney zur Effizienzsteigerung – der Workflow passt sich dem Projekt an, nicht umgekehrt.",
     howStep4Title: "Umsetzung & Iteration",
-    howStep4Desc: "Design ist ein iterativer Prozess. Ich setze Konzepte präzise um und nutze konstruktives Feedback sowie UX-Daten, um das Endprodukt bis ins kleinste Detail zu verfeinern. Mein Ziel ist es immer, die beste User Experience und eine optimale Conversion-Rate zu garantieren.",
+    howStep4Desc: "Design ist ein iterativer Prozess. Ich setze Konzepte präzise um und nutze konstruktives Feedback sowie Daten, um das Endprodukt bis ins kleinste Detail zu verfeinern. Mein Ziel ist es immer, die beste User Experience und eine optimale Conversion-Rate zu garantieren.",
   },
 };
 
