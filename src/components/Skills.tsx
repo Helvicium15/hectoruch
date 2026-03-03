@@ -14,7 +14,7 @@ import photographyPreview from "@/assets/photography-preview.png";
 import illustrationPreview from "@/assets/illustration-preview.webp";
 import graphicDesignPreview from "@/assets/graphic-design-preview.png";
 import webdevPreview from "@/assets/webdev-preview.png";
-import uxuiPreview from "@/assets/uxui-preview.png";
+import uxuiPreview from "@/assets/squishy-savings-preview.jpg";
 
 interface Skill {
   name: string;
