@@ -153,7 +153,7 @@ const translations: Record<Language, Translations> = {
     howStep3Title: "Methodology & Tools",
     howStep3Desc: "Thanks to my solid experience, I always choose the most efficient technique for each project. Whether classic Adobe CC, Figma for web layouts, 3D software, or the targeted use of AI tools like Midjourney for efficiency—the workflow adapts to the project, not the other way around.",
     howStep4Title: "Execution & Iteration",
-    howStep4Desc: "Design is an iterative process. I implement concepts precisely and use constructive feedback and UX data to refine the final product down to the smallest detail. My goal is always to guarantee the best user experience and optimal conversion rate.",
+    howStep4Desc: "Design is an iterative process. I implement concepts precisely and use constructive feedback and data to refine the final product down to the smallest detail. My goal is always to guarantee the best user experience and optimal conversion rate.",
   },
   de: {
     // Hero
