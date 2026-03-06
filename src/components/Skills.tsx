@@ -226,7 +226,7 @@ const Skills = () => {
                           <img 
                             src={skill.previewImage} 
                             alt={skill.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-center"
                           />
                         ) : (
                           <Icon className={`w-16 h-16 md:w-20 md:h-20 transition-colors duration-500
