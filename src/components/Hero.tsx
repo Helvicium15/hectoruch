@@ -1,7 +1,5 @@
-import { ArrowDown, ArrowUpRight, Instagram, Send } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import LanguageToggle from "./LanguageToggle";
 import heroVideo from "@/assets/hero-background.mp4";
 import { useEffect, useState } from "react";
 const Hero = () => {
@@ -38,27 +36,8 @@ const Hero = () => {
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-background to-transparent" />
       </div>
 
-      {/* Header */}
-      <header className={`relative z-20 px-6 md:px-12 py-6 flex justify-between items-center transition-all duration-700 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-        <div className="flex flex-col">
-          <h2 className="text-lg md:text-xl font-medium tracking-wide text-foreground">HECTOR URIBE</h2>
-        </div>
-        
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.about}</a>
-          <a href="#skills" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.skills}</a>
-          <a href="#projects" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.projects}</a>
-          <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-black px-3 py-1.5 rounded-md">{t.contact}</a>
-        </nav>
-        
-        <div className="flex items-center gap-4">
-          <LanguageToggle />
-          <a href="#contact" className="px-5 py-2.5 rounded-full bg-black border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300">
-            {t.startProject}
-          </a>
-        </div>
-      </header>
+      {/* Spacer for fixed navbar */}
+      <div className="h-16" />
 
       {/* Main Hero Content */}
       <div className="flex-1 relative px-6 md:px-12 flex items-center">

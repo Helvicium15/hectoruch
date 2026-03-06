@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
-import Problems from "@/components/Problems";
-import Solutions from "@/components/Solutions";
+import Navbar from "@/components/Navbar";
 import About from "@/components/About";
 import ImageMosaic from "@/components/ImageMosaic";
 import HowIWork from "@/components/HowIWork";
@@ -12,6 +11,7 @@ import FluidBackground from "@/components/FluidBackground";
 const Index = () => {
   return <div className="min-h-screen bg-background font-inter relative">
       <FluidBackground />
+      <Navbar />
       <Hero />
       
       
