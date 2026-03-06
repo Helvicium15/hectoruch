@@ -1,7 +1,5 @@
-import { ArrowDown, ArrowUpRight, Instagram, Send } from "lucide-react";
-import { FaXTwitter } from "react-icons/fa6";
+import { ArrowDown } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useEffect, useState } from "react";
 import heroVideo from "@/assets/hero-background.mp4";
 import { useEffect, useState } from "react";
 const Hero = () => {
