@@ -52,14 +52,6 @@ const Navbar = () => {
 
       <div className="flex items-center gap-4">
         <LanguageToggle />
-        
-        {/* Desktop CTA */}
-        <a 
-          href="#contact" 
-          className="hidden md:inline-flex px-5 py-2.5 rounded-full bg-black border border-foreground/20 text-sm font-medium hover:bg-foreground hover:text-background transition-all duration-300"
-        >
-          {t.startProject}
-        </a>
 
         {/* Mobile Menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
