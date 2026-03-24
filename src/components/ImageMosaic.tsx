@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import mosaicAztec from "@/assets/mosaic-aztec.png";
@@ -10,10 +10,18 @@ import mosaicSmile from "@/assets/mosaic-smile.png";
 import mosaicRobot from "@/assets/mosaic-robot.png";
 import mosaicSentinel from "@/assets/mosaic-sentinel.png";
 import mosaicSavings from "@/assets/mosaic-savings.jpg";
+import aloeCreamVideo from "@/assets/mosaic-aloe-cream.mp4";
 
-const images = [
+type GalleryItem = {
+  alt: string;
+  category: string;
+  link?: string;
+} & ({ src: string; type?: "image" } | { video: string; type: "video" });
+
+const items: GalleryItem[] = [
   { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
   { src: mosaicSavings, alt: "Squishy Savings", category: "UX/UI Design", link: "https://squishy-savings-app.vercel.app/" },
+  { video: aloeCreamVideo, type: "video", alt: "Aloe Special Cream", category: "Motion Design" },
   { src: mosaicAztec, alt: "Aztec Priest", category: "3D Modeling" },
   { src: mosaicCandyGun, alt: "Candy Gun", category: "3D Modeling" },
   { src: mosaicFrog, alt: "Boxing Frog", category: "3D Modeling" },
@@ -22,6 +30,45 @@ const images = [
   { src: mosaicSmile, alt: "Smile Grenade", category: "Graphic Design" },
   { src: mosaicRobot, alt: "Robot", category: "3D Modeling" },
 ];
+
+const VideoCard = ({ video, alt }: { video: string; alt: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = containerRef.current;
+    const vid = videoRef.current;
+    if (!el || !vid) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          vid.play().catch(() => {});
+        } else {
+          vid.pause();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="aspect-[3/4] overflow-hidden relative">
+      <video
+        ref={videoRef}
+        src={video}
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        aria-label={alt}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    </div>
+  );
+};
 
 const ImageMosaic = () => {
   const { t } = useLanguage();
@@ -58,7 +105,7 @@ const ImageMosaic = () => {
           </div>
           <div className="flex items-center gap-3">
             <span className="font-orbitron text-sm text-muted-foreground mr-4 hidden md:block">
-              {formatNumber(images.length)} {t.gallery.toLowerCase()}
+              {formatNumber(items.length)} {t.gallery.toLowerCase()}
             </span>
             <button
               onClick={() => scroll("left")}
@@ -85,31 +132,35 @@ const ImageMosaic = () => {
         className="flex gap-4 md:gap-5 overflow-x-auto scrollbar-hide px-6 md:px-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] pb-4 snap-x snap-mandatory"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        {images.map((image, index) => (
+        {items.map((item, index) => (
           <div
             key={index}
             className="group flex-shrink-0 w-[280px] md:w-[340px] snap-start"
           >
             <div className="overflow-hidden rounded-2xl bg-card/80 backdrop-blur-md border border-border/30 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20">
-              <div className="aspect-[3/4] overflow-hidden relative">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </div>
+              {item.type === "video" ? (
+                <VideoCard video={(item as any).video} alt={item.alt} />
+              ) : (
+                <div className="aspect-[3/4] overflow-hidden relative">
+                  <img
+                    src={(item as any).src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+              )}
               <div className="p-4">
                 <span className="font-orbitron text-[10px] text-muted-foreground tracking-wider">
                   [{formatNumber(index + 1)}]
                 </span>
                 <h3 className="font-orbitron text-sm font-semibold text-foreground uppercase tracking-wide mt-1">
-                  {image.alt}
+                  {item.alt}
                 </h3>
-                <p className="text-xs text-muted-foreground mt-1">{image.category}</p>
-                {image.link && (
+                <p className="text-xs text-muted-foreground mt-1">{item.category}</p>
+                {item.link && (
                   <a
-                    href={image.link}
+                    href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-2 text-xs font-orbitron text-primary hover:text-primary/80 underline underline-offset-2 transition-colors"
