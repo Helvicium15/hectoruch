@@ -19,9 +19,9 @@ type GalleryItem = {
 } & ({ src: string; type?: "image" } | { video: string; type: "video" });
 
 const items: GalleryItem[] = [
+  { video: aloeCreamVideo, type: "video", alt: "Aloe Special Cream", category: "Motion Design" },
   { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
   { src: mosaicSavings, alt: "Squishy Savings", category: "UX/UI Design", link: "https://squishy-savings-app.vercel.app/" },
-  { video: aloeCreamVideo, type: "video", alt: "Aloe Special Cream", category: "Motion Design" },
   { src: mosaicAztec, alt: "Aztec Priest", category: "3D Modeling" },
   { src: mosaicCandyGun, alt: "Candy Gun", category: "3D Modeling" },
   { src: mosaicFrog, alt: "Boxing Frog", category: "3D Modeling" },
