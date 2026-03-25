@@ -8,6 +8,7 @@ import { QRCodeSVG } from "qrcode.react";
 import LanguageToggle from "./LanguageToggle";
 
 const PORTFOLIO_URL = "https://hectoruch.lovable.app";
+const LINKEDIN_URL = "https://www.linkedin.com/in/hectoruch18";
 
 const Navbar = () => {
   const { t } = useLanguage();
