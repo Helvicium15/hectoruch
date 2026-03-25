@@ -77,6 +77,8 @@ interface Translations {
   howStep3Desc: string;
   howStep4Title: string;
   howStep4Desc: string;
+  share: string;
+  scanToVisit: string;
 }
 
 const translations: Record<Language, Translations> = {
@@ -154,6 +156,8 @@ const translations: Record<Language, Translations> = {
     howStep3Desc: "Thanks to my solid experience, I always choose the most efficient technique for each project. Whether classic Adobe CC, Figma for web layouts, 3D software, or the targeted use of AI tools like Midjourney for efficiency—the workflow adapts to the project, not the other way around.",
     howStep4Title: "Execution & Iteration",
     howStep4Desc: "Design is an iterative process. I implement concepts precisely and use constructive feedback and data to refine the final product down to the smallest detail. My goal is always to guarantee the best user experience and optimal conversion rate.",
+    share: "Share",
+    scanToVisit: "Scan to visit my portfolio",
   },
   de: {
     // Hero
@@ -229,6 +233,8 @@ const translations: Record<Language, Translations> = {
     howStep3Desc: "Dank meiner fundierten Erfahrung wähle ich stets die effizienteste Technik für das jeweilige Projekt. Ob klassische Adobe CC, Figma für Web-Layouts, 3D-Software oder der gezielte Einsatz von KI-Tools wie Midjourney zur Effizienzsteigerung – der Workflow passt sich dem Projekt an, nicht umgekehrt.",
     howStep4Title: "Umsetzung & Iteration",
     howStep4Desc: "Design ist ein iterativer Prozess. Ich setze Konzepte präzise um und nutze konstruktives Feedback sowie Daten, um das Endprodukt bis ins kleinste Detail zu verfeinern. Mein Ziel ist es immer, die beste User Experience und eine optimale Conversion-Rate zu garantieren.",
+    share: "Teilen",
+    scanToVisit: "Scannen, um mein Portfolio zu besuchen",
   },
 };
 
