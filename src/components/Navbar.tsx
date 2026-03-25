@@ -108,15 +108,25 @@ const Navbar = () => {
 
       {/* QR Code Dialog */}
       <Dialog open={showQR} onOpenChange={setShowQR}>
-        <DialogContent className="sm:max-w-xs flex flex-col items-center gap-6 bg-background border-border">
+        <DialogContent className="sm:max-w-sm flex flex-col items-center gap-6 bg-background border-border">
           <DialogHeader className="text-center">
             <DialogTitle className="text-foreground">HECTOR URIBE</DialogTitle>
             <DialogDescription className="text-muted-foreground">{t.scanToVisit}</DialogDescription>
           </DialogHeader>
-          <div className="bg-white p-4 rounded-xl">
-            <QRCodeSVG value={PORTFOLIO_URL} size={200} level="H" />
+          <div className="flex gap-6 w-full justify-center">
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-xs font-medium text-foreground">Portfolio</p>
+              <div className="bg-white p-3 rounded-xl">
+                <QRCodeSVG value={PORTFOLIO_URL} size={130} level="H" />
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-xs font-medium text-foreground">LinkedIn</p>
+              <div className="bg-white p-3 rounded-xl">
+                <QRCodeSVG value={LINKEDIN_URL} size={130} level="H" />
+              </div>
+            </div>
           </div>
-          <p className="text-xs text-muted-foreground break-all">{PORTFOLIO_URL}</p>
         </DialogContent>
       </Dialog>
     </>
