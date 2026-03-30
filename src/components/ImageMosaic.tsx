@@ -12,12 +12,13 @@ import mosaicSentinel from "@/assets/mosaic-sentinel.png";
 import mosaicSavings from "@/assets/mosaic-savings.jpg";
 import aloeCreamVideo from "@/assets/mosaic-aloe-cream.mp4";
 import blueSillyCrab from "@/assets/blue_silly_crab.png";
-import { SiFigma, SiVercel, SiGithub, SiAdobefirefly } from "react-icons/si";
+import { SiFigma, SiVercel, SiGithub, SiClaude } from "react-icons/si";
 
 type GalleryItem = {
   alt: string;
   category: string;
   link?: string;
+  tools?: React.ReactNode;
 } & ({ src: string; type?: "image" } | { video: string; type: "video" });
 
 const items: GalleryItem[] = [
