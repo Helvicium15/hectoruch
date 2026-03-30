@@ -182,6 +182,7 @@ const ImageMosaic = () => {
                   {item.alt}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1">{item.category}</p>
+                {item.tools && item.tools}
                 {item.link && (
                   <a
                     href={item.link}
