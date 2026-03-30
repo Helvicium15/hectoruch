@@ -11,14 +11,38 @@ import mosaicRobot from "@/assets/mosaic-robot.png";
 import mosaicSentinel from "@/assets/mosaic-sentinel.png";
 import mosaicSavings from "@/assets/mosaic-savings.jpg";
 import aloeCreamVideo from "@/assets/mosaic-aloe-cream.mp4";
+import blueSillyCrab from "@/assets/blue_silly_crab.png";
+import { SiFigma, SiVercel, SiGithub, SiClaude } from "react-icons/si";
 
 type GalleryItem = {
   alt: string;
   category: string;
   link?: string;
+  tools?: React.ReactNode;
 } & ({ src: string; type?: "image" } | { video: string; type: "video" });
 
+const FireflyIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+    <path d="M12 2L14 8L20 8L15 12L17 18L12 14L7 18L9 12L4 8L10 8Z" />
+  </svg>
+);
+
 const items: GalleryItem[] = [
+  { 
+    src: blueSillyCrab, 
+    alt: "Blue Silly Crab", 
+    category: "Web App", 
+    link: "https://silly-crab-sc75.vercel.app/",
+    tools: (
+      <div className="flex items-center gap-2 mt-2">
+        <SiClaude className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Claude Code" />
+        <SiFigma className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Figma" />
+        <SiVercel className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Vercel" />
+        <SiGithub className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="GitHub" />
+        <FireflyIcon />
+      </div>
+    )
+  },
   { video: aloeCreamVideo, type: "video", alt: "Aloe Special Cream", category: "Motion Design" },
   { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
   { src: mosaicSavings, alt: "Squishy Savings", category: "UX/UI Design", link: "https://squishy-savings-app.vercel.app/" },
@@ -158,6 +182,7 @@ const ImageMosaic = () => {
                   {item.alt}
                 </h3>
                 <p className="text-xs text-muted-foreground mt-1">{item.category}</p>
+                {item.tools && item.tools}
                 {item.link && (
                   <a
                     href={item.link}
