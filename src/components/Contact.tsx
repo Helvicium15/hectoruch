@@ -31,9 +31,6 @@ const Contact = () => {
               <span className="block text-foreground">{t.readyToCreate.split(' ').slice(2).join(' ')}</span>
             </h2>
 
-            <p className="text-sm md:text-base text-muted-foreground leading-relaxed bg-black px-4 py-3 rounded-lg inline-block max-w-md">
-              {t.contactText}
-            </p>
           </div>
 
           {/* Right Column - Contact Options */}
