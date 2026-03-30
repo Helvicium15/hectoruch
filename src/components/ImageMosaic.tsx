@@ -21,7 +21,28 @@ type GalleryItem = {
   tools?: React.ReactNode;
 } & ({ src: string; type?: "image" } | { video: string; type: "video" });
 
+const FireflyIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+    <path d="M12 2L14 8L20 8L15 12L17 18L12 14L7 18L9 12L4 8L10 8Z" />
+  </svg>
+);
+
 const items: GalleryItem[] = [
+  { 
+    src: blueSillyCrab, 
+    alt: "Blue Silly Crab", 
+    category: "Web App", 
+    link: "https://silly-crab-sc75.vercel.app/",
+    tools: (
+      <div className="flex items-center gap-2 mt-2">
+        <SiClaude className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Claude Code" />
+        <SiFigma className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Figma" />
+        <SiVercel className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="Vercel" />
+        <SiGithub className="w-4 h-4 text-muted-foreground hover:text-foreground transition-colors" title="GitHub" />
+        <FireflyIcon />
+      </div>
+    )
+  },
   { video: aloeCreamVideo, type: "video", alt: "Aloe Special Cream", category: "Motion Design" },
   { src: mosaicSentinel, alt: "SentinelOne", category: "UX/UI Design", link: "https://sentinel-2025.vercel.app/" },
   { src: mosaicSavings, alt: "Squishy Savings", category: "UX/UI Design", link: "https://squishy-savings-app.vercel.app/" },
