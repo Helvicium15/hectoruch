@@ -13,10 +13,10 @@ const Projects = () => {
   // Placeholder projects - replace with actual projects from Behance
   const projects = [
     {
-      title: "Obsidian",
-      category: "Crypto Landing Page",
+      title: "Silly Crab",
+      category: "Web App",
       imageUrl: obsidianPreview,
-      link: "https://obsidian-rise-shine.lovable.app"
+      link: "https://silly-crab-sc75.vercel.app/"
     },
     {
       title: "Landingpage Webservice",
