@@ -91,15 +91,6 @@ const Navbar = () => {
                   <Share2 className="h-5 w-5" />
                   {t.share}
                 </button>
-                <div className="pt-6 border-t border-border/50">
-                  <a
-                    href="#contact"
-                    onClick={() => setIsOpen(false)}
-                    className="inline-flex px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all duration-300"
-                  >
-                    {t.startProject}
-                  </a>
-                </div>
               </nav>
             </SheetContent>
           </Sheet>
