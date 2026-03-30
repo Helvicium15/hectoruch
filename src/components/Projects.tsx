@@ -1,6 +1,6 @@
 import ProjectCard from "./ProjectCard";
 import { useLanguage } from "@/contexts/LanguageContext";
-import obsidianPreview from "@/assets/obsidian-preview.png";
+import sillyCrabPreview from "@/assets/silly-crab-preview.png";
 import landingpagePreview from "@/assets/landingpage-preview.png";
 import ecothreadPreview from "@/assets/ecothread-preview.png";
 import mobilePreview from "@/assets/mobile-preview.png";
@@ -15,7 +15,7 @@ const Projects = () => {
     {
       title: "Silly Crab",
       category: "Web App",
-      imageUrl: obsidianPreview,
+      imageUrl: sillyCrabPreview,
       link: "https://silly-crab-sc75.vercel.app/"
     },
     {
